@@ -75,11 +75,8 @@ public class Draw extends JLabel {
         g.setColor(Color.BLACK);
         g.fillRect(0,0,gui.width,gui.height);
 
-        g.setColor(Color.lightGray);
-        for(int x=0; x<16;x++){
-            for(int y=0; y<16;y++){
-                g.drawRect(x*32+gui.xoff,y*32+gui.yoff,32,32);
-            }
-        }
+        g.setColor(new Color(51,204,51));
+        g.setFont(new Font("Arial", Font.BOLD, 35));
+        g.drawString("Drücke die Leertaste um das Spiel zustarten", 5,70);
     }
 }

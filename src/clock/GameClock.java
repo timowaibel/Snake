@@ -7,7 +7,6 @@ import game.Snake;
 
 public class GameClock extends Thread{
 
-    //glaub fertig
     public void run(){
         while(Main.isRunning()){
             try {
@@ -28,7 +27,6 @@ public class GameClock extends Thread{
                     Snake.head.setY(7);
                     //score
                 }
-                System.out.println("Moin");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

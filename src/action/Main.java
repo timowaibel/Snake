@@ -6,21 +6,15 @@ import clock.GameClock;
 
 public class Main {
     public static boolean running = true ;
-
     public static Screen screen = Screen.Start;
+    public static GameClock gameClock;
 
     public static void main(String[] args) {
         gui g= new gui();
-        GameClock gameClock = new GameClock();
-
+        gameClock = new GameClock();
         g.create();
-
-        //keine ahnung wieso das Funktioniert
-        if(isRunning()){
-            gameClock.start();
-        }
     }
-
+    //Getter und Setter
     public static Screen getScreen() {
         return screen;
     }

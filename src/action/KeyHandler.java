@@ -46,8 +46,10 @@ public class KeyHandler implements KeyListener {
                 }
                 break;
             case KeyEvent.VK_SPACE:
-                Main.setRunning(true);
-                Main.setScreen(Screen.Game);
+                if(Main.getScreen() == Screen.Start){
+                    Main.gameClock.start();
+                    Main.setScreen(Screen.Game);
+                }
                 break;
         }
     }
