@@ -1,5 +1,7 @@
 package action;
 
+import Gui.Screen;
+import clock.GameClock;
 import game.Direction;
 import game.Snake;
 
@@ -42,6 +44,10 @@ public class KeyHandler implements KeyListener {
                     Snake.head.setDirection(Direction.RIGHT);
                     Snake.waitToMove=true;
                 }
+                break;
+            case KeyEvent.VK_SPACE:
+                Main.setRunning(true);
+                Main.setScreen(Screen.Game);
                 break;
         }
     }

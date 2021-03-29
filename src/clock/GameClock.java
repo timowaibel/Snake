@@ -1,13 +1,15 @@
 package clock;
 
+import Gui.Draw;
 import action.Collission;
+import action.Main;
 import game.Snake;
 
 public class GameClock extends Thread{
-    public static boolean running = true ;
+
     //glaub fertig
     public void run(){
-        while(running){
+        while(Main.isRunning()){
             try {
                 sleep(200);
                 Snake.move();
@@ -26,6 +28,7 @@ public class GameClock extends Thread{
                     Snake.head.setY(7);
                     //score
                 }
+                System.out.println("Moin");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

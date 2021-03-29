@@ -1,5 +1,6 @@
 package Gui;
 
+import action.Main;
 import game.Snake;
 
 import javax.swing.*;
@@ -9,11 +10,25 @@ public class Draw extends JLabel {
 
     Point p;
 
+
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2d= (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_OFF);
 
+        switch (Main.screen){
+            case Start: drawStart(g);
+                break;
+            case Game: drawGame(g);
+                break;
+            case Death://drawDeath
+                break;
+        }
+
+        repaint();
+    }
+
+    public void drawGame(Graphics g){
         //draw background
         g.setColor(Color.BLACK);
         g.fillRect(0,0,gui.width,gui.height);
@@ -53,7 +68,18 @@ public class Draw extends JLabel {
         g.setFont(new Font("Arial",Font.BOLD,20));
         g.drawString("Score", 5,25);
         g.drawString("Best",655,25);
+    }
 
-        repaint();
+    public void drawStart(Graphics g){
+        //draw background
+        g.setColor(Color.BLACK);
+        g.fillRect(0,0,gui.width,gui.height);
+
+        g.setColor(Color.lightGray);
+        for(int x=0; x<16;x++){
+            for(int y=0; y<16;y++){
+                g.drawRect(x*32+gui.xoff,y*32+gui.yoff,32,32);
+            }
+        }
     }
 }
