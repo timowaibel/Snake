@@ -10,6 +10,7 @@ public class Main {
         GameClock gameClock = new GameClock();
         // muss glaub nich rein zum prüfen auf kollision
         //Test Git
+        //Test für Sven
         g.create();
         gameClock.start();
     }
