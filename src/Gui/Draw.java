@@ -19,6 +19,7 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //Draw Snake Tails
+
         g.setColor(new Color(30,200,30));
         for(int i = 0; i<Snake.tails.size(); i++){
             p = Snake.ptc(Snake.tails.get(i).getX(),Snake.tails.get(i).getY());

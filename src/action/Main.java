@@ -9,6 +9,7 @@ public class Main {
         gui g= new gui();
         GameClock gameClock = new GameClock();
         // muss glaub nich rein zum prüfen auf kollision
+        //Test Git
         g.create();
         gameClock.start();
     }
