@@ -19,13 +19,23 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //Draw Snake Tails
-        //Hululul
+
+        g.setColor(new Color(30,200,30));
+        for(int i = 0; i<Snake.tails.size(); i++){
+            p = Snake.ptc(Snake.tails.get(i).getX(),Snake.tails.get(i).getY());
+            g.fillRect(p.x,p.y,32,32);
+        }
+
         //Draw Snake Head
         g.setColor(new Color(0,153,0));
         p = Snake.ptc(Snake.head.getX(), Snake.head.getY());
         g.fillRect(p.x,p.y,32,32);
 
         // Draw PickUp
+        g.setColor(Color.red);
+        p = Snake.ptc(Snake.pickup.getX(), Snake.pickup.getY());
+        g.fillRect(p.x,p.y,32,32);
+
         //draw Grid
         g.setColor(Color.lightGray);
         for(int x=0; x<16;x++){
