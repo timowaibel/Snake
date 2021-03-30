@@ -7,6 +7,7 @@ import game.Snake;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class KeyHandler implements KeyListener {
     @Override
@@ -48,6 +49,11 @@ public class KeyHandler implements KeyListener {
                     Main.setRunning(true);
                     Main.gameClock.start();
                     Main.setScreen(Screen.Game);
+                }else{
+                    if(Main.getScreen() == Screen.Death){
+                        Main.setRunning(true);
+                        Main.setScreen(Screen.Game);
+                    }
                 }
                 break;
         }

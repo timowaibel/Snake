@@ -21,6 +21,14 @@ public class Collission {
         if(Snake.pickup.getX() == Snake.head.getX() && Snake.pickup.getY() == Snake.head.getY()) {
             Snake.pickup.reset();
             Snake.addTail();
+            if(Snake.pickup.getX() == Snake.head.getX() && Snake.pickup.getY() == Snake.head.getY()){
+                Snake.pickup.reset();
+            }
+            for(int i = 0; i < Snake.tails.size(); i++){
+                if(Snake.pickup.getX() == Snake.tails.get(i).getX() && Snake.pickup.getY() == Snake.tails.get(i).getY()){
+                    Snake.pickup.reset();
+                }
+            }
         }
     }
 }

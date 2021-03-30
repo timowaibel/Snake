@@ -12,6 +12,7 @@ public class Main {
     public static void main(String[] args) {
         gui g= new gui();
         gameClock = new GameClock();
+        gameClock.setName("Gameclock");
         g.create();
     }
 

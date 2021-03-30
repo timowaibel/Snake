@@ -14,6 +14,8 @@ public class Draw extends JLabel {
 
     Point p;
     BufferedImage snake;
+    Font heading = new Font("Arial", Font.BOLD, 50);
+    Font text = new Font("Arial", Font.BOLD, 35);
 
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -25,7 +27,7 @@ public class Draw extends JLabel {
                 break;
             case Game: drawGame(g);
                 break;
-            case Death://drawDeath
+            case Death: drawDeath(g);
                 break;
         }
         repaint();
@@ -80,9 +82,10 @@ public class Draw extends JLabel {
 
         //draw Text
         g.setColor(new Color(51,204,51));
-        g.setFont(new Font("Arial", Font.BOLD,50));
+        g.setFont(heading);
         g.drawString("Snake",320,50);
-        g.setFont(new Font("Arial", Font.BOLD, 35));
+        //Your Highscore
+        g.setFont(text);
         g.drawString("Press Space to start", 230,500);
         g.setFont(new Font("Arial", Font.BOLD, 10));
         g.drawString("created by Sven & Timo", 10, 550);
@@ -95,5 +98,19 @@ public class Draw extends JLabel {
             e.printStackTrace();
         }
         g.drawImage(snake, 145, 90, this);
+    }
+
+    public void drawDeath(Graphics g){
+        //draw background
+        g.setColor(Color.BLACK);
+        g.fillRect(0,0,gui.width,gui.height);
+
+        //draw Text
+        g.setColor(new Color(51,204,51));
+        g.setFont(heading);
+        g.drawString("GAME OVER",240,50);
+        //Your Score
+        g.setFont(text);
+        g.drawString("Press Space to play again", 180, 500);
     }
 }
