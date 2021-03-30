@@ -10,10 +10,8 @@ import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener {
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent e) {    }
 
-    }
-    // eigentlich fertig
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()){
@@ -47,6 +45,7 @@ public class KeyHandler implements KeyListener {
                 break;
             case KeyEvent.VK_SPACE:
                 if(Main.getScreen() == Screen.Start){
+                    Main.setRunning(true);
                     Main.gameClock.start();
                     Main.setScreen(Screen.Game);
                 }
@@ -55,7 +54,5 @@ public class KeyHandler implements KeyListener {
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
-
-    }
+    public void keyReleased(KeyEvent e) { }
 }

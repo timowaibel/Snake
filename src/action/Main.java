@@ -5,7 +5,7 @@ import Gui.gui;
 import clock.GameClock;
 
 public class Main {
-    public static boolean running = true ;
+    public static boolean running = false ;
     public static Screen screen = Screen.Start;
     public static GameClock gameClock;
 
@@ -14,6 +14,7 @@ public class Main {
         gameClock = new GameClock();
         g.create();
     }
+
     //Getter und Setter
     public static Screen getScreen() {
         return screen;

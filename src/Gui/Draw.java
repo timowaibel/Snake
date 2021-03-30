@@ -3,13 +3,17 @@ package Gui;
 import action.Main;
 import game.Snake;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
 public class Draw extends JLabel {
 
     Point p;
-
+    BufferedImage snake;
 
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -24,7 +28,6 @@ public class Draw extends JLabel {
             case Death://drawDeath
                 break;
         }
-
         repaint();
     }
 
@@ -75,8 +78,22 @@ public class Draw extends JLabel {
         g.setColor(Color.BLACK);
         g.fillRect(0,0,gui.width,gui.height);
 
+        //draw Text
         g.setColor(new Color(51,204,51));
+        g.setFont(new Font("Arial", Font.BOLD,50));
+        g.drawString("Snake",320,50);
         g.setFont(new Font("Arial", Font.BOLD, 35));
-        g.drawString("Drücke die Leertaste um das Spiel zustarten", 5,70);
+        g.drawString("Press Space to start", 230,500);
+        g.setFont(new Font("Arial", Font.BOLD, 10));
+        g.drawString("created by Sven & Timo", 10, 550);
+
+        //draw Picture
+        URL resource = getClass().getResource("snakeNeu.png");
+        try {
+            snake = ImageIO.read(resource);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        g.drawImage(snake, 145, 90, this);
     }
 }
