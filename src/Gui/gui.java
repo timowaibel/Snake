@@ -3,8 +3,6 @@ package Gui;
 import action.KeyHandler;
 
 import javax.swing.*;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyListener;
 
 public class gui {
     JFrame jf;

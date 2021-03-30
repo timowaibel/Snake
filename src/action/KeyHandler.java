@@ -1,5 +1,7 @@
 package action;
 
+import Gui.Screen;
+import clock.GameClock;
 import game.Direction;
 import game.Snake;
 
@@ -8,10 +10,8 @@ import java.awt.event.KeyListener;
 
 public class KeyHandler implements KeyListener {
     @Override
-    public void keyTyped(KeyEvent e) {
+    public void keyTyped(KeyEvent e) {    }
 
-    }
-    // eigentlich fertig
     @Override
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()){
@@ -43,11 +43,16 @@ public class KeyHandler implements KeyListener {
                     Snake.waitToMove=true;
                 }
                 break;
+            case KeyEvent.VK_SPACE:
+                if(Main.getScreen() == Screen.Start){
+                    Main.setRunning(true);
+                    Main.gameClock.start();
+                    Main.setScreen(Screen.Game);
+                }
+                break;
         }
     }
 
     @Override
-    public void keyReleased(KeyEvent e) {
-
-    }
+    public void keyReleased(KeyEvent e) { }
 }

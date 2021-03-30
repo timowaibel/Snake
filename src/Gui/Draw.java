@@ -1,19 +1,37 @@
 package Gui;
 
+import action.Main;
 import game.Snake;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
 public class Draw extends JLabel {
 
     Point p;
+    BufferedImage snake;
 
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
         Graphics2D g2d= (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_OFF);
 
+        switch (Main.screen){
+            case Start: drawStart(g);
+                break;
+            case Game: drawGame(g);
+                break;
+            case Death://drawDeath
+                break;
+        }
+        repaint();
+    }
+
+    public void drawGame(Graphics g){
         //draw background
         g.setColor(Color.BLACK);
         g.fillRect(0,0,gui.width,gui.height);
@@ -53,7 +71,29 @@ public class Draw extends JLabel {
         g.setFont(new Font("Arial",Font.BOLD,20));
         g.drawString("Score", 5,25);
         g.drawString("Best",655,25);
+    }
 
-        repaint();
+    public void drawStart(Graphics g){
+        //draw background
+        g.setColor(Color.BLACK);
+        g.fillRect(0,0,gui.width,gui.height);
+
+        //draw Text
+        g.setColor(new Color(51,204,51));
+        g.setFont(new Font("Arial", Font.BOLD,50));
+        g.drawString("Snake",320,50);
+        g.setFont(new Font("Arial", Font.BOLD, 35));
+        g.drawString("Press Space to start", 230,500);
+        g.setFont(new Font("Arial", Font.BOLD, 10));
+        g.drawString("created by Sven & Timo", 10, 550);
+
+        //draw Picture
+        URL resource = getClass().getResource("snakeNeu.png");
+        try {
+            snake = ImageIO.read(resource);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        g.drawImage(snake, 145, 90, this);
     }
 }
