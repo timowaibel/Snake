@@ -4,6 +4,8 @@ import Gui.Screen;
 import Gui.gui;
 import clock.GameClock;
 
+import static clock.GameClock.startScreenSnake;
+
 public class Main {
     public static boolean running = false ;
     public static Screen screen = Screen.Start;
@@ -13,7 +15,10 @@ public class Main {
         gui g= new gui();
         gameClock = new GameClock();
         gameClock.setName("Gameclock");
+        gameClock.start();
         g.create();
+        startScreenSnake();
+
     }
 
     //Getter und Setter
