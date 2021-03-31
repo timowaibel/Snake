@@ -92,6 +92,16 @@ public class Snake {
         }
     }
 
+    public static void resetSnake(boolean game){
+        if (game){
+            Snake.head.setX(7);
+            Snake.head.setY(7);
+            Snake.head.setDirection(Direction.RIGHT);
+            Snake.pickup.reset();
+        }
+        Snake.tails.clear();
+    }
+
     //Position to Coordinate
     public static Point ptc(int x,int y){
         Point p = new Point(0,0);

@@ -46,11 +46,7 @@ public class KeyHandler implements KeyListener {
                 break;
             case KeyEvent.VK_SPACE:
                 if(Main.getScreen() == Screen.Start){
-                    Snake.tails.clear();
-                    Snake.head.setX(7);
-                    Snake.head.setY(7);
-                    Snake.head.setDirection(Direction.RIGHT);
-                    Snake.pickup.reset();
+                    Snake.resetSnake(true);
                     Main.setRunning(true);
                     Main.setScreen(Screen.Game);
                 }else{

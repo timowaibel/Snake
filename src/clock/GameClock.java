@@ -30,11 +30,7 @@ public class GameClock extends Thread{
                         Main.setRunning(false);
                         Main.setScreen(Screen.Death);
                         //Snake zurücksetzen
-                        Snake.tails.clear();
-                        Snake.head.setX(7);
-                        Snake.head.setY(7);
-                        Snake.head.setDirection(Direction.RIGHT);
-                        Snake.pickup.reset();
+                        Snake.resetSnake(true);
                         //score
                     }
 
@@ -47,6 +43,12 @@ public class GameClock extends Thread{
                     Snake.moveStart();
                     try {
                         sleep(10);
+                        if(Snake.tails.size() != 0){
+                            if(SnakeDisappeared()){
+                                Snake.resetSnake(false);
+                                startScreenSnake();
+                            }
+                        }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -104,5 +106,35 @@ public class GameClock extends Thread{
                 }
             }
         }
+    }
+
+    public boolean SnakeDisappeared(){
+        switch (Snake.head.getDirection()){
+            case RIGHT:
+                if(Snake.tails.get(Snake.tails.size()-1).getX() == gui.width){
+                    return true;
+                }else {
+                    return false;
+                }
+            case UP:
+                if(Snake.tails.get(Snake.tails.size()-1).getY() == -32){
+                    return true;
+                }else {
+                    return false;
+                }
+            case LEFT:
+                if(Snake.tails.get(Snake.tails.size()-1).getX() == -32){
+                    return true;
+                }else {
+                    return false;
+                }
+            case DOWN:
+                if(Snake.tails.get(Snake.tails.size()-1).getY() == gui.height){
+                    return true;
+                }else {
+                    return false;
+                }
+        }
+        return false;
     }
 }

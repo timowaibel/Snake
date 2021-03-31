@@ -91,8 +91,17 @@ public class Draw extends JLabel {
         g.setFont(new Font("Arial", Font.BOLD, 10));
         g.drawString("created by Sven & Timo", 10, 550);
 
-        Point p1 = new Point();
+        /*//draw Picture
+        URL resource = getClass().getResource("snakeNeu.png");
+        try {
+            snake = ImageIO.read(resource);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        g.drawImage(snake, 145, 90, this);*/
+
         //Draw Snake Tails
+        Point p1 = new Point();
         g.setColor(new Color(30,200,30));
         for(int i = 0; i<Snake.tails.size(); i++){
             p1.setLocation(Snake.tails.get(i).getX(),Snake.tails.get(i).getY());
@@ -103,15 +112,6 @@ public class Draw extends JLabel {
         g.setColor(new Color(0,153,0));
         p1.setLocation(Snake.head.getX(), Snake.head.getY());
         g.fillRect(p1.x,p1.y,32,32);
-
-        /*//draw Picture
-        URL resource = getClass().getResource("snakeNeu.png");
-        try {
-            snake = ImageIO.read(resource);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        g.drawImage(snake, 145, 90, this);*/
     }
 
     public void drawDeath(Graphics g){
