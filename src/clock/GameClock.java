@@ -44,13 +44,9 @@ public class GameClock extends Thread{
                 }
             }else{
                 if(Main.screen == Screen.Start){
-                    Snake.move();
+                    Snake.moveStart();
                     try {
-                        if(count%3 == 0 && count <= 160 && count!=0){
-                            startscreenAddTail();
-                        }
                         sleep(10);
-                        count++;
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -69,42 +65,44 @@ public class GameClock extends Thread{
         int dir = (int) Math.round(Math.random()*4);
         int start;
         switch (dir) {
-            case 0 -> {
-                Snake.head.setDirection(Direction.RIGHT);
-                start = (int) Math.abs(Math.round(Math.random() * gui.height - 32));
-                Snake.head.setX(-32);
-                Snake.head.setY(start);
-            }
             case 1 -> {
                 Snake.head.setDirection(Direction.UP);
                 start = (int) Math.abs(Math.round(Math.random() * gui.width - 32));
                 Snake.head.setX(start);
                 Snake.head.setY(gui.height);
+                for (int i = 1; i < 8; i++) {
+                    Snake.tails.add(new Tail(start, gui.height-1+i*32));
+                }
             }
             case 2 -> {
                 Snake.head.setDirection(Direction.LEFT);
                 start = (int) Math.abs(Math.round(Math.random() * gui.height - 32));
                 Snake.head.setX(gui.width);
                 Snake.head.setY(start);
+                for (int i = 1; i < 8; i++) {
+                    Snake.tails.add(new Tail(gui.width-1+i*32, start));
+                }
             }
+
             case 3 -> {
                 Snake.head.setDirection(Direction.DOWN);
                 start = (int) Math.abs(Math.round(Math.random() * gui.width - 32));
                 Snake.head.setX(start);
                 Snake.head.setY(-32);
+                for (int i = -2; i > -10; i--) {
+                    Snake.tails.add(new Tail(start, i*32+1));
+                }
             }
-        }
-    }
 
-    public void startscreenAddTail(){
-        switch (Snake.head.getDirection()) {
-            case RIGHT -> {
-                Snake.tails.add(new Tail(-32, Snake.head.getY()));
-                System.out.println("Hallo");
+            default -> {
+                Snake.head.setDirection(Direction.RIGHT);
+                start = (int) Math.abs(Math.round(Math.random() * gui.height - 32));
+                Snake.head.setX(-32);
+                Snake.head.setY(start);
+                for (int i = -2; i > -10; i--) {
+                    Snake.tails.add(new Tail(i*32+1, start));
+                }
             }
-            case UP -> Snake.tails.add(new Tail(Snake.head.getX(), gui.width));
-            case LEFT -> Snake.tails.add(new Tail(gui.height, Snake.head.getY()));
-            case DOWN -> Snake.tails.add(new Tail(Snake.head.getX(), -32));
         }
     }
 }

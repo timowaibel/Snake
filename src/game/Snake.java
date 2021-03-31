@@ -63,6 +63,35 @@ public class Snake {
         }
     }
 
+    public static void moveStart(){
+        switch (head.getDirection()) {
+            case RIGHT -> {
+                head.setX(head.getX() + 1);
+                for (int i = 0; i < Snake.tails.size(); i++) {
+                    Snake.tails.get(i).setX(Snake.tails.get(i).getX() + 1);
+                }
+            }
+            case UP -> {
+                head.setY(head.getY() - 1);
+                for (int i = 0; i < Snake.tails.size(); i++) {
+                    Snake.tails.get(i).setY(Snake.tails.get(i).getY() - 1);
+                }
+            }
+            case LEFT -> {
+                head.setX(head.getX() - 1);
+                for (int i = 0; i < Snake.tails.size(); i++) {
+                    Snake.tails.get(i).setX(Snake.tails.get(i).getX() - 1);
+                }
+            }
+            case DOWN -> {
+                head.setY(head.getY() + 1);
+                for (int i = 0; i < Snake.tails.size(); i++) {
+                    Snake.tails.get(i).setY(Snake.tails.get(i).getY() + 1);
+                }
+            }
+        }
+    }
+
     //Position to Coordinate
     public static Point ptc(int x,int y){
         Point p = new Point(0,0);
