@@ -46,7 +46,7 @@ public class Snake {
                 tails.get(0).setY(head.getY());
             }
         }
-        //move Head lulul
+        //move Head
         switch (head.getDirection()) {
             case RIGHT -> head.setX(head.getX() + 1);
             case UP -> head.setY(head.getY() - 1);
