@@ -18,7 +18,6 @@ public class Main {
         gameClock.start();
         g.create();
         startScreenSnake();
-
     }
 
     //Getter und Setter

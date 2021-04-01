@@ -47,19 +47,11 @@ public class Snake {
             }
         }
         //move Head
-        switch (head.getDirection()){
-            case RIGHT:
-                head.setX(head.getX()+1);
-                break;
-            case UP:
-                head.setY(head.getY()-1);
-                break;
-            case LEFT:
-                head.setX(head.getX()-1);
-                break;
-            case DOWN:
-                head.setY(head.getY() +1);
-                break;
+        switch (head.getDirection()) {
+            case RIGHT -> head.setX(head.getX() + 1);
+            case UP -> head.setY(head.getY() - 1);
+            case LEFT -> head.setX(head.getX() - 1);
+            case DOWN -> head.setY(head.getY() + 1);
         }
     }
 

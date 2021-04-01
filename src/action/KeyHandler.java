@@ -57,8 +57,8 @@ public class KeyHandler implements KeyListener {
                         if(Main.getScreen() == Screen.Death){
                             Main.setRunning(true);
                             Main.setScreen(Screen.Game);
+                        }
                     }
-                }
                 break;
             }
         }
