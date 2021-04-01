@@ -3,6 +3,7 @@ package Gui;
 import action.KeyHandler;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class gui {
     JFrame jf;
@@ -19,6 +20,12 @@ public class gui {
         jf.setLayout(null);
         jf.setResizable(false);
         jf.addKeyListener(new KeyHandler( ));
+
+
+        java.net.URL imgURL = getClass().getResource("icon.png");
+        ImageIcon icon = new ImageIcon(imgURL);
+        Image image = icon.getImage();
+        jf.setIconImage(image);
 
         d= new Draw();
         d.setBounds(0,0,width,height);
