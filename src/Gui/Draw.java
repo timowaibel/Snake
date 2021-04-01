@@ -16,6 +16,7 @@ public class Draw extends JLabel {
 
     Point p;
     BufferedImage snake;
+    BufferedImage pickUp;
     Font heading = new Font("Arial", Font.BOLD, 50);
     Font text = new Font("Arial", Font.BOLD, 35);
 
@@ -53,9 +54,14 @@ public class Draw extends JLabel {
         g.fillRect(p.x,p.y,32,32);
 
         // Draw PickUp
-        g.setColor(Color.red);
         p = Snake.ptc(Snake.pickup.getX(), Snake.pickup.getY());
-        g.fillRect(p.x,p.y,32,32);
+        URL resource = getClass().getResource("apfel.jpg");
+        try {
+            pickUp = ImageIO.read(resource);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        g.drawImage(pickUp, p.x, p.y, this);
 
         //draw Grid
         g.setColor(Color.lightGray);
