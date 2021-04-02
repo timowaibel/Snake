@@ -15,7 +15,8 @@ public class Snake {
     public static ArrayList<Tail> tails = new ArrayList<>();
 
     public static PickUp pickup = new PickUp();
-
+    //Sorce
+    public static int score=0, highscore=0;
 
     public static void addTail(){
         if(tails.size()<1){

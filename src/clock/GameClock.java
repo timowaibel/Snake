@@ -32,6 +32,7 @@ public class GameClock extends Thread{
                         //Snake zurücksetzen
                         Snake.resetSnake(true);
                         //score
+
                     }
 
 
