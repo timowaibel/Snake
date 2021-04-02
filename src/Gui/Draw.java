@@ -72,8 +72,8 @@ public class Draw extends JLabel {
         // Draw Score
         g.setColor(new Color(51,204,51));
         g.setFont(new Font("Arial",Font.BOLD,20));
-        g.drawString("Score", 5,25);
-        g.drawString("Best",655,25);
+        g.drawString("Score "+Snake.score, 5,25);
+        g.drawString("Highscore "+Snake.highscore,647,25);
     }
 
     public void drawStart(Graphics g){
@@ -87,6 +87,7 @@ public class Draw extends JLabel {
         g.drawString("Snake",320,50);
         //Your Highscore
         g.setFont(text);
+        g.drawString("Highscore "+Snake.highscore,279,350);
         g.drawString("Press Space to start", 230,500);
         g.setFont(new Font("Arial", Font.BOLD, 10));
         g.drawString("created by Sven & Timo", 10, 550);
@@ -125,6 +126,8 @@ public class Draw extends JLabel {
         g.drawString("GAME OVER",240,50);
         //Your Score
         g.setFont(text);
+        g.drawString("Youre Score "+Snake.score,264,400);
+        g.drawString("Highscore "+Snake.highscore,278,300);
         g.drawString("Press Space to play again", 180, 500);
     }
 }

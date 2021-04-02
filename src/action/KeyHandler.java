@@ -53,10 +53,13 @@ public class KeyHandler implements KeyListener {
                         Snake.resetSnake(true);
                         Main.setRunning(true);
                         Main.setScreen(Screen.Game);
+                        //Score
+                        Snake.score=0;
                     }else{
                         if(Main.getScreen() == Screen.Death){
                             Main.setRunning(true);
                             Main.setScreen(Screen.Game);
+                            Snake.score=0;
                         }
                     }
                 break;
