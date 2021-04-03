@@ -22,7 +22,11 @@ public class Collission {
             Snake.pickup.reset();
             Snake.addTail();
             //Score
-            Snake.score+=10;
+            if(Snake.collectedPickUp % 20 == 0 && Snake.collectedPickUp != 0){
+                Snake.score+=50;
+            }else{
+                Snake.score+=10;
+            }
             if(Snake.score>Snake.highscore){
                 Snake.highscore=Snake.score;
             }
@@ -35,6 +39,7 @@ public class Collission {
                     Snake.pickup.reset();
                 }
             }
+            Snake.collectedPickUp++;
         }
     }
 }

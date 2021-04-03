@@ -15,8 +15,20 @@ public class Draw extends JLabel {
     Point p;
     BufferedImage snake;
     BufferedImage pickUp;
+    BufferedImage pickUpG;
     Font heading = new Font("Arial", Font.BOLD, 50);
     Font text = new Font("Arial", Font.BOLD, 35);
+    URL apfel = getClass().getResource("apfel.jpg");
+    URL gApfel = getClass().getResource("goldenerApfel.png");
+
+    public Draw() {
+        try {
+            pickUp = ImageIO.read(apfel);
+            pickUpG = ImageIO.read(gApfel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     protected void paintComponent(Graphics g){
         super.paintComponent(g);
@@ -50,13 +62,12 @@ public class Draw extends JLabel {
 
         // Draw PickUp
         p = Snake.ptc(Snake.pickup.getX(), Snake.pickup.getY());
-        URL resource = getClass().getResource("apfel.jpg");
-        try {
-            pickUp = ImageIO.read(resource);
-        } catch (IOException e) {
-            e.printStackTrace();
+
+        if(Snake.collectedPickUp % 20 == 0 && Snake.collectedPickUp != 0){
+            g.drawImage(pickUpG, p.x, p.y, this);
+        }else {
+            g.drawImage(pickUp, p.x, p.y, this);
         }
-        g.drawImage(pickUp, p.x, p.y, this);
 
         //draw Grid
         g.setColor(Color.lightGray);

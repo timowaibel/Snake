@@ -18,6 +18,8 @@ public class Snake {
     //Score
     public static int score=0, highscore=0;
 
+    public static int collectedPickUp = 0;
+
     public static void addTail(){
         if(tails.size()<1){
             tails.add(new Tail(head.getX(), head.getY()));
@@ -93,6 +95,7 @@ public class Snake {
             Snake.head.setY(7);
             Snake.head.setDirection(Direction.RIGHT);
             Snake.pickup.reset();
+            Snake.collectedPickUp = 0;
         }
         Snake.tails.clear();
     }
