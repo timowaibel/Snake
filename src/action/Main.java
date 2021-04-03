@@ -3,6 +3,8 @@ package action;
 import Gui.Screen;
 import Gui.gui;
 import clock.GameClock;
+import game.Difficulties;
+import game.Direction;
 import game.Snake;
 
 import java.io.File;
@@ -15,6 +17,7 @@ public class Main {
     public static boolean running = false ;
     public static Screen screen = Screen.Start;
     public static GameClock gameClock;
+    public static Difficulties difficulties = Difficulties.EASY;
 
     public static void main(String[] args) throws IOException {
         gui g= new gui();
@@ -50,4 +53,14 @@ public class Main {
     public static void setRunning(boolean running) {
         Main.running = running;
     }
+
+    public static Difficulties getDifficulties() {
+        return difficulties;
+    }
+
+    public static void setDifficulties(Difficulties difficulties) {
+        Main.difficulties = difficulties;
+    }
+
+
 }

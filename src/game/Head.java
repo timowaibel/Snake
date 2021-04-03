@@ -32,4 +32,5 @@ public class Head {
     public void setDirection(Direction direction) {
         this.direction = direction;
     }
+
 }

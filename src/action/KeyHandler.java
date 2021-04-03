@@ -1,17 +1,22 @@
 package action;
 
 import Gui.Screen;
+import clock.GameClock;
+import game.Difficulties;
 import game.Direction;
 import game.Snake;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+
 public class KeyHandler implements KeyListener {
+
     @Override
     public void keyTyped(KeyEvent e) {    }
 
     @Override
     public void keyPressed(KeyEvent e) {
+
         if(Main.getScreen() == Screen.Game){
             switch (e.getKeyCode()){
                 case KeyEvent.VK_W:
@@ -45,6 +50,15 @@ public class KeyHandler implements KeyListener {
             }
         }else {
             switch (e.getKeyCode()){
+                case KeyEvent.VK_1:
+                    Main.setDifficulties(Difficulties.EASY);
+                    break;
+                case KeyEvent.VK_2:
+                    Main.setDifficulties(Difficulties.MEDIUM);
+                    break;
+                case KeyEvent.VK_3:
+                    Main.setDifficulties(Difficulties.HARD);
+                    break;
                 case KeyEvent.VK_SPACE:
                         if(Main.getScreen() == Screen.Start){
                         Snake.resetSnake(true);
@@ -57,12 +71,18 @@ public class KeyHandler implements KeyListener {
                             Main.setRunning(true);
                             Main.setScreen(Screen.Game);
                             Snake.score=0;
+                            GameClock.easy=false;
+                            GameClock.medium=false;
+                            GameClock.hard=false;
                         }
                     }
-                break;
+                        break;
+
+
             }
         }
-    }
+        }
+
 
     @Override
     public void keyReleased(KeyEvent e) { }
