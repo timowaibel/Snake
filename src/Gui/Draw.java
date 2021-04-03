@@ -18,6 +18,7 @@ public class Draw extends JLabel {
     BufferedImage pickUpG;
     Font heading = new Font("Arial", Font.BOLD, 50);
     Font text = new Font("Arial", Font.BOLD, 35);
+    Color textC = new Color(51,204,51);
     URL apfel = getClass().getResource("apfel.jpg");
     URL gApfel = getClass().getResource("goldenerApfel.png");
 
@@ -63,7 +64,7 @@ public class Draw extends JLabel {
         // Draw PickUp
         p = Snake.ptc(Snake.pickup.getX(), Snake.pickup.getY());
 
-        if(Snake.collectedPickUp % 20 == 0 && Snake.collectedPickUp != 0){
+        if(Snake.isGolden()){
             g.drawImage(pickUpG, p.x, p.y, this);
         }else {
             g.drawImage(pickUp, p.x, p.y, this);
@@ -82,7 +83,7 @@ public class Draw extends JLabel {
         g.drawRect(gui.xoff,gui.yoff,512,512);
 
         // Draw Score
-        g.setColor(new Color(51,204,51));
+        g.setColor(textC);
         g.setFont(new Font("Arial",Font.BOLD,20));
         g.drawString("Score "+Snake.score, 5,25);
         g.drawString("Highscore "+Snake.highscore,647,25);
@@ -94,10 +95,9 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //draw Text
-        g.setColor(new Color(51,204,51));
+        g.setColor(textC);
         g.setFont(heading);
         g.drawString("Snake",320,50);
-        //Your Highscore
         g.setFont(text);
         g.drawString("Highscore "+Snake.highscore,279,350);
         g.drawString("Press Space to start", 230,500);
@@ -133,10 +133,9 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //draw Text
-        g.setColor(new Color(51,204,51));
+        g.setColor(textC);
         g.setFont(heading);
         g.drawString("GAME OVER",240,50);
-        //Your Score
         g.setFont(text);
         g.drawString("You're Score "+Snake.score,264,400);
         g.drawString("Highscore "+Snake.highscore,278,300);

@@ -107,4 +107,8 @@ public class Snake {
         p.y= y * 32 + gui.yoff;
         return p;
     }
+
+    public static boolean isGolden(){
+        return Snake.collectedPickUp % 20 == 0 && Snake.collectedPickUp != 0;
+    }
 }
