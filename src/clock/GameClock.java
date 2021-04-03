@@ -8,6 +8,11 @@ import game.Direction;
 import game.Snake;
 import game.Tail;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class GameClock extends Thread{
 
     public void run(){
@@ -23,10 +28,19 @@ public class GameClock extends Thread{
                     if(Collission.collideSelf()||Collission.collideWall()){
                         Main.setRunning(false);
                         Main.setScreen(Screen.Death);
+
                         //Snake zurücksetzen
                         Snake.resetSnake(true);
+
+                        //Highscore in File übertagen
+                        File file = new File("Snake/src/game/Highscore.txt");
+                        if(file.exists()){
+                            BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+                            writer.write(String.valueOf(Snake.highscore));
+                            writer.close();
+                        }
                     }
-                } catch (InterruptedException e) {
+                } catch (InterruptedException | IOException e) {
                     e.printStackTrace();
                 }
             }else{

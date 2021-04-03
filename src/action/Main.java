@@ -3,6 +3,11 @@ package action;
 import Gui.Screen;
 import Gui.gui;
 import clock.GameClock;
+import game.Snake;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
 
 import static clock.GameClock.startScreenSnake;
 
@@ -11,13 +16,22 @@ public class Main {
     public static Screen screen = Screen.Start;
     public static GameClock gameClock;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         gui g= new gui();
         gameClock = new GameClock();
         gameClock.setName("Gameclock");
         gameClock.start();
         g.create();
         startScreenSnake();
+
+        File file = new File("Snake/src/game/Highscore.txt");
+        if(file.exists()){
+            Scanner scanner = new Scanner(file);
+            if(scanner.hasNextInt()){
+                Snake.highscore = scanner.nextInt();
+            }
+            scanner.close();
+        }
     }
 
     //Getter und Setter
