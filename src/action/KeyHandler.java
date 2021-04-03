@@ -1,13 +1,10 @@
 package action;
 
 import Gui.Screen;
-import clock.GameClock;
 import game.Direction;
 import game.Snake;
-
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.concurrent.ScheduledExecutorService;
 
 public class KeyHandler implements KeyListener {
     @Override

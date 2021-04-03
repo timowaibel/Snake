@@ -1,7 +1,6 @@
 package game;
 
 public class Tail {
-    // dazu zählen von hinterteil und mitbewegen felt noch
     int x,y;
     boolean wait = true;
 

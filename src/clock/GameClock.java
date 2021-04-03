@@ -1,20 +1,14 @@
 package clock;
 
-import Gui.Draw;
 import Gui.Screen;
 import Gui.gui;
 import action.Collission;
 import action.Main;
 import game.Direction;
-import game.PickUp;
 import game.Snake;
 import game.Tail;
 
-import java.awt.*;
-
 public class GameClock extends Thread{
-
-    int count = 0;
 
     public void run(){
         while(true){
@@ -31,11 +25,7 @@ public class GameClock extends Thread{
                         Main.setScreen(Screen.Death);
                         //Snake zurücksetzen
                         Snake.resetSnake(true);
-                        //score
-
                     }
-
-
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

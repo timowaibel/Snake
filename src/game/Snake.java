@@ -15,7 +15,7 @@ public class Snake {
     public static ArrayList<Tail> tails = new ArrayList<>();
 
     public static PickUp pickup = new PickUp();
-    //Sorce
+    //Score
     public static int score=0, highscore=0;
 
     public static void addTail(){
@@ -38,6 +38,7 @@ public class Snake {
                 }
             }
         }
+
         //move first to Head
         if(tails.size()>=1){
             if(tails.get(0).isWait()){
@@ -47,6 +48,7 @@ public class Snake {
                 tails.get(0).setY(head.getY());
             }
         }
+
         //move Head
         switch (head.getDirection()) {
             case RIGHT -> head.setX(head.getX() + 1);

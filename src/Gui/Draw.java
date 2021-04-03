@@ -10,8 +10,6 @@ import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 
-import static java.lang.Math.random;
-
 public class Draw extends JLabel {
 
     Point p;
@@ -25,13 +23,10 @@ public class Draw extends JLabel {
         Graphics2D g2d= (Graphics2D) g;
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,RenderingHints.VALUE_ANTIALIAS_OFF);
 
-        switch (Main.screen){
-            case Start: drawStart(g);
-                break;
-            case Game: drawGame(g);
-                break;
-            case Death: drawDeath(g);
-                break;
+        switch (Main.screen) {
+            case Start -> drawStart(g);
+            case Game -> drawGame(g);
+            case Death -> drawDeath(g);
         }
         repaint();
     }
@@ -132,7 +127,7 @@ public class Draw extends JLabel {
         g.drawString("GAME OVER",240,50);
         //Your Score
         g.setFont(text);
-        g.drawString("Youre Score "+Snake.score,264,400);
+        g.drawString("You're Score "+Snake.score,264,400);
         g.drawString("Highscore "+Snake.highscore,278,300);
         g.drawString("Press Space to play again", 180, 500);
     }
