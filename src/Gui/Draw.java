@@ -16,16 +16,28 @@ public class Draw extends JLabel {
     BufferedImage snake;
     BufferedImage pickUp;
     BufferedImage pickUpG;
+    BufferedImage headR;
+    BufferedImage headU;
+    BufferedImage headL;
+    BufferedImage headD;
     Font heading = new Font("Arial", Font.BOLD, 50);
     Font text = new Font("Arial", Font.BOLD, 35);
     Color textC = new Color(51,204,51);
-    URL apfel = getClass().getResource("apfel.jpg");
+    URL apfel = getClass().getResource("apfel.png");
     URL gApfel = getClass().getResource("goldenerApfel.png");
+    URL HeadR = getClass().getResource("HeadR.png");
+    URL HeadU = getClass().getResource("HeadU.png");
+    URL HeadL = getClass().getResource("HeadL.png");
+    URL HeadD = getClass().getResource("HeadD.png");
 
     public Draw() {
         try {
             pickUp = ImageIO.read(apfel);
             pickUpG = ImageIO.read(gApfel);
+            headR = ImageIO.read(HeadR);
+            headU = ImageIO.read(HeadU);
+            headL = ImageIO.read(HeadL);
+            headD = ImageIO.read(HeadD);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -57,9 +69,10 @@ public class Draw extends JLabel {
         }
 
         //Draw Snake Head
-        g.setColor(new Color(0,153,0));
         p = Snake.ptc(Snake.head.getX(), Snake.head.getY());
-        g.fillRect(p.x,p.y,32,32);
+        /*g.setColor(new Color(0,153,0));
+        g.fillRect(p.x,p.y,32,32);*/
+        drawHead(p.x, p.y, g);
 
         // Draw PickUp
         p = Snake.ptc(Snake.pickup.getX(), Snake.pickup.getY());
@@ -125,6 +138,7 @@ public class Draw extends JLabel {
         g.setColor(new Color(0,153,0));
         p1.setLocation(Snake.head.getX(), Snake.head.getY());
         g.fillRect(p1.x,p1.y,32,32);
+        drawHead(p1.x, p1.y, g);
     }
 
     public void drawDeath(Graphics g){
@@ -140,5 +154,14 @@ public class Draw extends JLabel {
         g.drawString("You're Score "+Snake.score,264,400);
         g.drawString("Highscore "+Snake.highscore,278,300);
         g.drawString("Press Space to play again", 180, 500);
+    }
+
+    public void drawHead(int x, int y, Graphics g){
+        switch (Snake.head.getDirection()){
+            case RIGHT -> g.drawImage(headR, x, y, this);
+            case UP -> g.drawImage(headU, x, y-10, this);
+            case LEFT -> g.drawImage(headL, x-10, y, this);
+            case DOWN -> g.drawImage(headD, x, y, this);
+        }
     }
 }
