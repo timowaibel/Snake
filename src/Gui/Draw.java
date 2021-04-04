@@ -20,6 +20,7 @@ public class Draw extends JLabel {
     BufferedImage headU;
     BufferedImage headL;
     BufferedImage headD;
+    BufferedImage tail;
     Font heading = new Font("Arial", Font.BOLD, 50);
     Font text = new Font("Arial", Font.BOLD, 35);
     Color textC = new Color(51,204,51);
@@ -29,6 +30,7 @@ public class Draw extends JLabel {
     URL HeadU = getClass().getResource("HeadU.png");
     URL HeadL = getClass().getResource("HeadL.png");
     URL HeadD = getClass().getResource("HeadD.png");
+    URL Tail = getClass().getResource("Tail.png");
 
     public Draw() {
         try {
@@ -38,6 +40,7 @@ public class Draw extends JLabel {
             headU = ImageIO.read(HeadU);
             headL = ImageIO.read(HeadL);
             headD = ImageIO.read(HeadD);
+            tail = ImageIO.read(Tail);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -62,10 +65,11 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //Draw Snake Tails
-        g.setColor(new Color(30,200,30));
+        //g.setColor(new Color(30,200,30));
         for(int i = 0; i<Snake.tails.size(); i++){
             p = Snake.ptc(Snake.tails.get(i).getX(),Snake.tails.get(i).getY());
-            g.fillRect(p.x,p.y,32,32);
+            //g.fillRect(p.x,p.y,32,32);
+            drawTail(p.x, p.y, g);
         }
 
         //Draw Snake Head
@@ -128,10 +132,11 @@ public class Draw extends JLabel {
 
         //Draw Snake Tails
         Point p1 = new Point();
-        g.setColor(new Color(30,200,30));
+        //g.setColor(new Color(30,200,30));
         for(int i = 0; i<Snake.tails.size(); i++){
             p1.setLocation(Snake.tails.get(i).getX(),Snake.tails.get(i).getY());
-            g.fillRect(p1.x,p1.y,32,32);
+            //g.fillRect(p1.x,p1.y,32,32);
+            drawTail(p1.x, p1.y, g);
         }
 
         //Draw Snake Head
@@ -163,5 +168,9 @@ public class Draw extends JLabel {
             case LEFT -> g.drawImage(headL, x-10, y, this);
             case DOWN -> g.drawImage(headD, x, y, this);
         }
+    }
+
+    public void drawTail(int x, int y, Graphics g){
+        g.drawImage(tail, x, y, this);
     }
 }
