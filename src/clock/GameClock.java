@@ -77,7 +77,7 @@ public class GameClock extends Thread{
                 start = (int) Math.abs(Math.round(Math.random() * gui.width - 32));
                 Snake.head.setX(start);
                 Snake.head.setY(gui.height);
-                for (int i = 1; i < 8; i++) {
+                for (int i = 1; i < 9; i++) {
                     Snake.tails.add(new Tail(start, gui.height-1+i*32));
                 }
             }
@@ -86,7 +86,7 @@ public class GameClock extends Thread{
                 start = (int) Math.abs(Math.round(Math.random() * gui.height - 32));
                 Snake.head.setX(gui.width);
                 Snake.head.setY(start);
-                for (int i = 1; i < 8; i++) {
+                for (int i = 1; i < 9; i++) {
                     Snake.tails.add(new Tail(gui.width-1+i*32, start));
                 }
             }
