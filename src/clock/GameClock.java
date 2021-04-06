@@ -3,7 +3,9 @@ package clock;
 import Gui.Screen;
 import Gui.gui;
 import action.Collission;
+import action.KeyHandler;
 import action.Main;
+import game.Difficulties;
 import game.Direction;
 import game.Snake;
 import game.Tail;
@@ -14,12 +16,27 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class GameClock extends Thread{
+    public static boolean easy=false;
+    public static boolean medium=false;
+    public static boolean hard=false;
 
     public void run(){
         while(true){
             if(Main.isRunning()){
                 try {
-                    sleep(200);
+                    if(Main.getDifficulties()==Difficulties.EASY){
+                        sleep(200);
+                    }
+                    if(Main.getDifficulties()==Difficulties.MEDIUM){
+                        sleep(170);
+                    }
+                    if(Main.getDifficulties()==Difficulties.HARD){
+                        sleep(140);
+                    }
+
+
+
+
                     Snake.move();
                     Snake.waitToMove = false;
 
