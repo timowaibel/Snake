@@ -27,10 +27,11 @@ public class Main {
         g.create();
         startScreenSnake();
 
-        File file = new File("Snake/src/game/Highscore.txt");
+        File file = new File("src/game/Highscore.txt");
         if(file.exists()){
             Scanner scanner = new Scanner(file);
             if(scanner.hasNextInt()){
+                System.out.println("hallo");
                 Snake.highscore = scanner.nextInt();
             }
             scanner.close();

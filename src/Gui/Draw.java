@@ -25,6 +25,8 @@ public class Draw extends JLabel {
     Font heading = new Font("Arial", Font.BOLD, 50);
     Font text = new Font("Arial", Font.BOLD, 35);
     Color textC = new Color(51,204,51);
+    //Color textC1 = new Color(151,201,151);
+    Color textC1 = new Color(221,51,51);
     URL apfel = getClass().getResource("apfel.png");
     URL gApfel = getClass().getResource("goldenerApfel.png");
     URL HeadR = getClass().getResource("HeadR.png");
@@ -124,6 +126,35 @@ public class Draw extends JLabel {
         g.setFont(new Font("Arial", Font.BOLD, 10));
         g.drawString("created by Sven & Timo", 10, 550);
 
+        //Difficulties
+        switch(Main.getDifficulties()){
+            case EASY -> {
+                g.setFont(text);
+                g.setColor(textC);
+                g.drawString("MEDIUM",320,250);
+                g.drawString("HARD",550,250);
+                g.setColor(textC1);
+                g.drawString("EASY",150,250);
+            }
+            case MEDIUM -> {
+                g.setFont(text);
+                g.setColor(textC1);
+                g.drawString("MEDIUM",320,250);
+                g.setColor(textC);
+                g.drawString("HARD",550,250);
+                g.drawString("EASY",150,250);
+            }
+            case HARD -> {
+                g.setFont(text);
+                g.setColor(textC);
+                g.drawString("MEDIUM",320,250);
+                g.setColor(textC1);
+                g.drawString("HARD",550,250);
+                g.setColor(textC);
+                g.drawString("EASY",150,250);
+            }
+        }
+
         /*//draw Picture
         URL resource = getClass().getResource("snakeNeu.png");
         try {
@@ -162,6 +193,35 @@ public class Draw extends JLabel {
         g.drawString("You're Score "+Snake.score,264,400);
         g.drawString("Highscore "+Snake.highscore,278,300);
         g.drawString("Press Space to play again", 180, 500);
+
+        //Difficulties
+        switch(Main.getDifficulties()) {
+            case EASY -> {
+                g.setFont(text);
+                g.setColor(textC);
+                g.drawString("MEDIUM", 320, 250);
+                g.drawString("HARD", 550, 250);
+                g.setColor(textC1);
+                g.drawString("EASY", 150, 250);
+            }
+            case MEDIUM -> {
+                g.setFont(text);
+                g.setColor(textC1);
+                g.drawString("MEDIUM", 320, 250);
+                g.setColor(textC);
+                g.drawString("HARD", 550, 250);
+                g.drawString("EASY", 150, 250);
+            }
+            case HARD -> {
+                g.setFont(text);
+                g.setColor(textC);
+                g.drawString("MEDIUM", 320, 250);
+                g.setColor(textC1);
+                g.drawString("HARD", 550, 250);
+                g.setColor(textC);
+                g.drawString("EASY", 150, 250);
+            }
+        }
     }
 
     public void drawHead(int x, int y, Graphics g){
