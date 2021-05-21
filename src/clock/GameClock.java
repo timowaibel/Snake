@@ -5,10 +5,7 @@ import Gui.gui;
 import action.Collission;
 import action.KeyHandler;
 import action.Main;
-import game.Difficulties;
-import game.Direction;
-import game.Snake;
-import game.Tail;
+import game.*;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -50,11 +47,34 @@ public class GameClock extends Thread{
                         Snake.resetSnake(true);
 
                         //Highscore in File übertagen
-                        File file = new File("Snake/src/game/Highscore.txt");
+                        File file = new File("src/game/Highscore.txt");
                         if(file.exists()){
                             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
-                            writer.write(String.valueOf(Snake.highscore));
+
+                            //Array sortieren
+                            boolean sorted = false;
+                            while (!sorted){
+                                sorted = true;
+                                for (int i = 0; i < Main.users.size()-1; i++) {
+                                    if(Main.users.get(i).getHighscore() < Main.users.get(i+1).getHighscore()){
+                                        User user = Main.users.get(i);
+                                        Main.users.set(i, Main.users.get(i+1));
+                                        Main.users.set(i+1, user);
+                                        sorted = false;
+                                    }
+                                }
+                            }
+
+                            //user in File übertragen
+                            for(int i = 0; i < Main.users.size(); i++) {
+                                writer.write(Main.users.get(i).getName());
+                                writer.newLine();
+                                writer.write(String.valueOf(Main.users.get(i).getHighscore()));
+                                writer.newLine();
+                            }
                             writer.close();
+
+                            Snake.highscore = Main.users.get(0).getHighscore();
                         }
                     }
                 } catch (InterruptedException | IOException e) {
