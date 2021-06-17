@@ -1,9 +1,12 @@
 package action;
 
 import Gui.Draw;
+import Gui.NewUserGUI;
 import Gui.Screen;
 import clock.GameClock;
 
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -47,7 +50,13 @@ public class MouseListener extends MouseAdapter {
                         if (x > startX && x < startX + width && y > startY + height && y > startY + ((Main.users.size() + 1) * height) && y < startY + ((Main.users.size() + 2) * height)) {
                             System.out.println("Moin " + x + " " + y);
                             //neues Fenster um neuen User zu erstellen
-
+                            if(Frame.getFrames().length == 1){
+                                NewUserGUI newUserGUI = new NewUserGUI();
+                            }else{
+                                if(!NewUserGUI.newFrame.isVisible()){
+                                    NewUserGUI.newFrame.setVisible(true);
+                                }
+                            }
                         } else {
                             System.out.println("Tschüss " + x + " " + y);
                             GameClock.setFolded(true);
