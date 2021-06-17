@@ -203,8 +203,11 @@ public class Draw extends JLabel {
         g.setFont(heading);
         g.drawString("GAME OVER",240,50);
         g.setFont(text);
-        g.drawString("You're Score "+Snake.score,264,400);
+        g.drawString("Your Score "+Snake.score,264,400);
         g.drawString("Highscore "+Snake.highscore,278,300);
+        if(GameClock.getSelUser()>=1){
+            g.drawString("Your Highscore "+ Main.users.get(GameClock.getSelUser()).getHighscore(), 230, 350);
+        }
         g.drawString("Press Space to play again", 180, 500);
 
         //Difficulties
