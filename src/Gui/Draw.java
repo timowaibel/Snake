@@ -112,6 +112,10 @@ public class Draw extends JLabel {
         g.setFont(new Font("Arial",Font.BOLD,20));
         g.drawString("Score "+Snake.score, 5,25);
         g.drawString("Highscore "+Snake.highscore,647,25);
+        if(GameClock.getSelUser() >= 0){
+            g.drawString("Your",647,50);
+            g.drawString("Highscore " + Main.users.get(GameClock.getSelUser()).getHighscore(),647, 72);
+        }
     }
 
     public void drawStart(Graphics g){
@@ -124,7 +128,10 @@ public class Draw extends JLabel {
         g.setFont(heading);
         g.drawString("Snake",320,50);
         g.setFont(text);
-        g.drawString("Highscore "+Snake.highscore,279,350);
+        g.drawString("Global Highscore "+Snake.highscore,249,350);
+        if(GameClock.getSelUser()>=0){
+            g.drawString("Your Highscore "+Main.users.get(GameClock.getSelUser()).getHighscore(),259,390);
+        }
         g.drawString("Press Space to start", 230,500);
         g.setFont(new Font("Arial", Font.BOLD, 10));
         g.drawString("created by Sven & Timo", 10, 550);
@@ -183,40 +190,7 @@ public class Draw extends JLabel {
         drawHead(p1.x, p1.y, g);
 
         //Draw Dropdown menu
-        int width = dropdown[0];
-        int height = dropdown[1];
-        int startX = dropdown[2];
-        int startY = dropdown[3];
-        g.setColor(Color.YELLOW);
-        g.fillRect(startX,startY, width,height);
-        g.setColor(textC);
-        g.drawRect(startX,startY, width,height);
-        g.setColor(Color.BLACK);
-        g.setFont(new Font("Arial",Font.PLAIN,20));
-        g.drawString("Select User",startX+5,startY+30);
-
-        if(GameClock.folded){
-        }else{
-            for(int i = 0; i < Main.users.size()+1;i++){
-                if(i==Main.users.size()){
-                    g.setColor(Color.ORANGE);
-                    g.fillRect(startX,((i+1)*height)+startY, width,height);
-                    g.setColor(textC);
-                    g.drawRect(startX,((i+1)*height)+startY, width,height);
-                    g.setColor(Color.BLACK);
-                    g.setFont(new Font("Arial",Font.PLAIN,20));
-                    g.drawString("Create new User",startX+5,((i+1)*height)+startY+30);
-                }else{
-                    g.setColor(Color.white);
-                    g.fillRect(startX,((i+1)*height)+startY, width,height);
-                    g.setColor(textC);
-                    g.drawRect(startX,((i+1)*height)+startY, width,height);
-                    g.setColor(Color.BLACK);
-                    g.setFont(new Font("Arial",Font.PLAIN,20));
-                    g.drawString(Main.users.get(i).getName(),startX+5,((i+1)*height)+startY+30);
-                }
-            }
-        }
+        drawDropdown(g);
     }
 
     public void drawDeath(Graphics g){
@@ -261,6 +235,8 @@ public class Draw extends JLabel {
                 g.drawString("EASY", 150, 250);
             }
         }
+
+        drawDropdown(g);
     }
 
     public void drawHead(int x, int y, Graphics g){
@@ -277,6 +253,47 @@ public class Draw extends JLabel {
             g.drawImage(tail1, x, y, this);
         }else{
             g.drawImage(tail2, x, y, this);
+        }
+    }
+
+    public void drawDropdown(Graphics g){
+        int width = dropdown[0];
+        int height = dropdown[1];
+        int startX = dropdown[2];
+        int startY = dropdown[3];
+        g.setColor(Color.YELLOW);
+        g.fillRect(startX,startY, width,height);
+        g.setColor(textC);
+        g.drawRect(startX,startY, width,height);
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Arial",Font.PLAIN,20));
+        g.drawString("Select User",startX+5,startY+30);
+
+        if(GameClock.folded){
+        }else{
+            for(int i = 0; i < Main.users.size()+1;i++){
+                if(i==Main.users.size()){
+                    g.setColor(Color.ORANGE);
+                    g.fillRect(startX,((i+1)*height)+startY, width,height);
+                    g.setColor(textC);
+                    g.drawRect(startX,((i+1)*height)+startY, width,height);
+                    g.setColor(Color.BLACK);
+                    g.setFont(new Font("Arial",Font.PLAIN,20));
+                    g.drawString("Create new User",startX+5,((i+1)*height)+startY+30);
+                }else{
+                    g.setColor(Color.white);
+                    g.fillRect(startX,((i+1)*height)+startY, width,height);
+                    if(GameClock.getSelUser() >= -1 && GameClock.getSelUser() == i){
+                        g.setColor(Color.RED);
+                        g.fillRect(startX, ((GameClock.getSelUser()+1)*height)+startY, width,height);
+                    }
+                    g.setColor(textC);
+                    g.drawRect(startX,((i+1)*height)+startY, width,height);
+                    g.setColor(Color.BLACK);
+                    g.setFont(new Font("Arial",Font.PLAIN,20));
+                    g.drawString(Main.users.get(i).getName(),startX+5,((i+1)*height)+startY+30);
+                }
+            }
         }
     }
 }

@@ -1,8 +1,8 @@
-Jonas
-800
 Joni
-300
+50
+Jonas
+40
 Timo
-200
+30
 Sven
 20

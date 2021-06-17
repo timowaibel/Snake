@@ -14,6 +14,7 @@ import java.io.IOException;
 
 public class GameClock extends Thread {
     public static boolean folded = true;
+    public static int selUser = -1;
 
     public void run(){
         while(true){
@@ -184,5 +185,13 @@ public class GameClock extends Thread {
 
     public static void setFolded(boolean folded) {
         GameClock.folded = folded;
+    }
+
+    public static int getSelUser() {
+        return selUser;
+    }
+
+    public static void setSelUser(int selUser) {
+        GameClock.selUser = selUser;
     }
 }

@@ -37,6 +37,11 @@ public class MouseListener extends MouseAdapter {
                 if (!GameClock.isFolded()) {
                     if (x > startX && x < startX + width && y > startY + height && y < startY + ((Main.users.size() + 1) * height)) {
                         int index = (y - startY - height) / height;
+                        if(GameClock.getSelUser() == index){
+                            GameClock.setSelUser(-1);
+                        }else{
+                            GameClock.setSelUser(index);
+                        }
                         System.out.println("Servus " + x + " " + y + " " + index + " " + Main.users.get(index).getName());
                     } else {
                         if (x > startX && x < startX + width && y > startY + height && y > startY + ((Main.users.size() + 1) * height) && y < startY + ((Main.users.size() + 2) * height)) {
@@ -45,6 +50,7 @@ public class MouseListener extends MouseAdapter {
 
                         } else {
                             System.out.println("Tschüss " + x + " " + y);
+                            GameClock.setFolded(true);
                         }
                     }
                 } else {
