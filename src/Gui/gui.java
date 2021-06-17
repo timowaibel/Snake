@@ -1,6 +1,8 @@
 package Gui;
 
 import action.KeyHandler;
+import action.Main;
+import action.MouseListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +22,7 @@ public class gui {
         jf.setLayout(null);
         jf.setResizable(false);
         jf.addKeyListener(new KeyHandler( ));
-
+        jf.addMouseListener(new MouseListener());
 
        // java.net.URL imgURL = getClass().getResource("icon.png");
        //ImageIcon icon = new ImageIcon(imgURL);

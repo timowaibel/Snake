@@ -12,10 +12,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class GameClock extends Thread{
-    public static boolean easy=false;
-    public static boolean medium=false;
-    public static boolean hard=false;
+public class GameClock extends Thread {
+    public static boolean folded = true;
 
     public void run(){
         while(true){
@@ -178,5 +176,13 @@ public class GameClock extends Thread{
                 }
         }
         return false;
+    }
+
+    public static boolean isFolded() {
+        return folded;
+    }
+
+    public static void setFolded(boolean folded) {
+        GameClock.folded = folded;
     }
 }

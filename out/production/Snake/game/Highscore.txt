@@ -1,8 +1,8 @@
-Timo
-200
 Jonas
 800
-Sven
-20
 Joni
 300
+Timo
+200
+Sven
+20
