@@ -20,6 +20,7 @@ public class Main {
     public static GameClock gameClock;
     public static Difficulties difficulties = Difficulties.EASY;
     public static ArrayList<User> users = new ArrayList<>();
+    public static int maxUser = 7;
 
     public static void main(String[] args) throws IOException {
         gui g= new gui();

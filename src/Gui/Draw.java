@@ -276,13 +276,15 @@ public class Draw extends JLabel {
         }else{
             for(int i = 0; i < Main.users.size()+1;i++){
                 if(i==Main.users.size()){
-                    g.setColor(Color.ORANGE);
-                    g.fillRect(startX,((i+1)*height)+startY, width,height);
-                    g.setColor(textC);
-                    g.drawRect(startX,((i+1)*height)+startY, width,height);
-                    g.setColor(Color.BLACK);
-                    g.setFont(new Font("Arial",Font.PLAIN,20));
-                    g.drawString("Create new User",startX+5,((i+1)*height)+startY+30);
+                    if(Main.users.size() <= Main.maxUser){
+                        g.setColor(Color.ORANGE);
+                        g.fillRect(startX,((i+1)*height)+startY, width,height);
+                        g.setColor(textC);
+                        g.drawRect(startX,((i+1)*height)+startY, width,height);
+                        g.setColor(Color.BLACK);
+                        g.setFont(new Font("Arial",Font.PLAIN,20));
+                        g.drawString("Create new User",startX+5,((i+1)*height)+startY+30);
+                    }
                 }else{
                     g.setColor(Color.white);
                     g.fillRect(startX,((i+1)*height)+startY, width,height);

@@ -33,11 +33,13 @@ public class MouseListener extends MouseAdapter {
         }
 
         if (Main.screen != Screen.Game) {
+            // öffnen des Dropdown Menu
             if (x > startX && x < startX + width && y > startY && y < startY + height) {
                 System.out.println("Hallo " + x + " " + y);
                 GameClock.setFolded(!GameClock.isFolded());
             } else {
                 if (!GameClock.isFolded()) {
+                    //click auf User
                     if (x > startX && x < startX + width && y > startY + height && y < startY + ((Main.users.size() + 1) * height)) {
                         int index = (y - startY - height) / height;
                         if(GameClock.getSelUser() == index){
@@ -47,7 +49,8 @@ public class MouseListener extends MouseAdapter {
                         }
                         System.out.println("Servus " + x + " " + y + " " + index + " " + Main.users.get(index).getName());
                     } else {
-                        if (x > startX && x < startX + width && y > startY + height && y > startY + ((Main.users.size() + 1) * height) && y < startY + ((Main.users.size() + 2) * height)) {
+                        //click auf new User
+                        if (x > startX && x < startX + width && y > startY + height && y > startY + ((Main.users.size() + 1) * height) && y < startY + ((Main.users.size() + 2) * height) && Main.users.size() <= Main.maxUser) {
                             System.out.println("Moin " + x + " " + y);
                             //neues Fenster um neuen User zu erstellen
                             if(Frame.getFrames().length == 1){

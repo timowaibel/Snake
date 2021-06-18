@@ -2,10 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56151e7f-56f3-4785-a825-6699d75173e6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/MouseListener$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/MouseListener$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Draw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/action/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/MouseListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
