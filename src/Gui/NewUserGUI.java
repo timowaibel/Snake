@@ -1,14 +1,13 @@
 package Gui;
 
 import action.Main;
+import clock.GameClock;
 import game.User;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.io.IOException;
 
 public class NewUserGUI{
 
@@ -16,7 +15,6 @@ public class NewUserGUI{
     JButton create;
     JButton cancel;
     JTextField name;
-    JPanel panel;
     JLabel error;
     ActionListener action;
 
@@ -29,24 +27,22 @@ public class NewUserGUI{
         newFrame.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         newFrame.setLocationRelativeTo(null);
         newFrame.setBackground(Color.BLACK);
+        newFrame.setResizable(false);
+        newFrame.setLayout(null);
 
-        action = new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(e.getSource() == create){
-                    create();
-
-                }else{
-                    if(e.getSource() == cancel){
-                        name.setText("");
-                        error.setText("");
-                        newFrame.setVisible(false);
-                    }else{
-                        if(e.getSource() == name){
-                            create();
-                        }
-                    }
+        action = e -> {
+            if(e.getSource() == create || e.getSource() == name){
+                create();
+            }else{
+                if(e.getSource() == cancel){
+                    cancel();
                 }
+            }
+            //save User
+            try {
+                GameClock.saveUser();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
             }
         };
 
@@ -85,16 +81,10 @@ public class NewUserGUI{
         error.setVisible(true);
 
 
-        panel = new JPanel();
-        panel.setLayout(null);
-
-        panel.add(cancel);
-        panel.add(create);
-        panel.add(name);
-        panel.add(error);
-
-        newFrame.add(panel);
-
+        newFrame.add(cancel);
+        newFrame.add(create);
+        newFrame.add(name);
+        newFrame.add(error);
 
         newFrame.setVisible(true);
     }
@@ -112,5 +102,11 @@ public class NewUserGUI{
                 error.setText("");
             }
         }
+    }
+
+    public void cancel(){
+        name.setText("");
+        error.setText("");
+        newFrame.setVisible(false);
     }
 }
