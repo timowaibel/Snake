@@ -7,6 +7,8 @@ import game.User;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.IOException;
 
 public class NewUserGUI{
@@ -17,8 +19,9 @@ public class NewUserGUI{
     JTextField name;
     JLabel error;
     ActionListener action;
+    KeyListener key;
 
-    String errorLenght = "Username is too long";
+    String errorLength = "Username is too long";
     String errorNoName = "You must enter a Name";
 
     public NewUserGUI(){
@@ -46,12 +49,32 @@ public class NewUserGUI{
             }
         };
 
+        key = new KeyListener() {
+
+            @Override
+            public void keyTyped(KeyEvent e) {
+                
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+                    cancel();
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+
+            }
+        };
+
         //Button create
         create = new JButton();
         create.setText("Create new User");
         create.setBounds(50,200,150,40);
         create.addActionListener(action);
-
+        create.addKeyListener(key);
 
         create.setVisible(true);
 
@@ -61,6 +84,7 @@ public class NewUserGUI{
         cancel.setText("cancel");
         cancel.setBounds(300,200,100,40);
         cancel.addActionListener(action);
+        cancel.addKeyListener(key);
 
         cancel.setVisible(true);
 
@@ -69,6 +93,7 @@ public class NewUserGUI{
         name = new JTextField();
         name.setBounds(100, 100, 200,40);
         name.addActionListener(action);
+        name.addKeyListener(key);
 
         name.setVisible(true);
 
@@ -94,7 +119,7 @@ public class NewUserGUI{
             error.setText(errorNoName);
         }else{
             if(name.getText().length() >= 12){
-                error.setText(errorLenght);
+                error.setText(errorLength);
             }else{
                 newFrame.setVisible(false);
                 Main.users.add(new User(name.getText(), 0));

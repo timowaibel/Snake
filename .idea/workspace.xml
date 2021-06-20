@@ -4,8 +4,6 @@
     <list default="true" id="56151e7f-56f3-4785-a825-6699d75173e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clock/GameClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clock/GameClock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Highscore.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
