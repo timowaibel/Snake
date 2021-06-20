@@ -3,13 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="56151e7f-56f3-4785-a825-6699d75173e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Draw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/MouseListener.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,6 +94,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -143,7 +140,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/User" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

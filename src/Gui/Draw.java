@@ -23,6 +23,8 @@ public class Draw extends JLabel {
     BufferedImage headD;
     BufferedImage tail1;
     BufferedImage tail2;
+    BufferedImage dFolded;
+    BufferedImage dOpen;
     Font heading = new Font("Arial", Font.BOLD, 50);
     Font text = new Font("Arial", Font.BOLD, 35);
     Color textC = new Color(51,204,51);
@@ -36,6 +38,8 @@ public class Draw extends JLabel {
     URL HeadD = getClass().getResource("HeadD.png");
     URL Tail1 = getClass().getResource("Tail1.png");
     URL Tail2 = getClass().getResource("Tail2.png");
+    URL DFolded = getClass().getResource("Dropdown folded.png");
+    URL DOpen = getClass().getResource("Dropdown open.png");
 
     public static int[] dropdown = {170, 35, 200, 100};
 
@@ -49,6 +53,8 @@ public class Draw extends JLabel {
             headD = ImageIO.read(HeadD);
             tail1 = ImageIO.read(Tail1);
             tail2 = ImageIO.read(Tail2);
+            dFolded = ImageIO.read(DFolded);
+            dOpen = ImageIO.read(DOpen);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -272,8 +278,7 @@ public class Draw extends JLabel {
         g.setFont(new Font("Arial",Font.PLAIN,20));
         g.drawString("Select User",startX+5,startY+30);
 
-        if(GameClock.folded){
-        }else{
+        if(!GameClock.folded){
             for(int i = 0; i < Main.users.size()+1;i++){
                 if(i==Main.users.size()){
                     if(Main.users.size() <= Main.maxUser){
@@ -299,6 +304,12 @@ public class Draw extends JLabel {
                     g.drawString(Main.users.get(i).getName(),startX+5,((i+1)*height)+startY+30);
                 }
             }
+        }
+
+        if(GameClock.folded){
+            g.drawImage(dFolded, startX + width - 35, startY, this);
+        }else{
+            g.drawImage(dOpen, startX + width - 35, startY, this);
         }
     }
 }
