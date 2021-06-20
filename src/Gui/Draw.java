@@ -25,6 +25,7 @@ public class Draw extends JLabel {
     BufferedImage tail2;
     BufferedImage dFolded;
     BufferedImage dOpen;
+    BufferedImage edit;
     Font heading = new Font("Arial", Font.BOLD, 50);
     Font text = new Font("Arial", Font.BOLD, 35);
     Color textC = new Color(51,204,51);
@@ -40,6 +41,7 @@ public class Draw extends JLabel {
     URL Tail2 = getClass().getResource("Tail2.png");
     URL DFolded = getClass().getResource("Dropdown folded.png");
     URL DOpen = getClass().getResource("Dropdown open.png");
+    URL Edit = getClass().getResource("edit.png");
 
     public static int[] dropdown = {170, 35, 200, 100};
 
@@ -55,6 +57,7 @@ public class Draw extends JLabel {
             tail2 = ImageIO.read(Tail2);
             dFolded = ImageIO.read(DFolded);
             dOpen = ImageIO.read(DOpen);
+            edit = ImageIO.read(Edit);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -302,6 +305,7 @@ public class Draw extends JLabel {
                     g.setColor(Color.BLACK);
                     g.setFont(new Font("Arial",Font.PLAIN,20));
                     g.drawString(Main.users.get(i).getName(),startX+5,((i+1)*height)+startY+30);
+                    g.drawImage(edit, (startX + width - 35), ((i+1)*height)+startY, this);
                 }
             }
         }

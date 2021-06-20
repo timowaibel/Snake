@@ -14,15 +14,19 @@ import java.io.IOException;
 public class NewUserGUI{
 
     public static JFrame newFrame;
-    JButton create;
+    public static JButton create;
     JButton cancel;
-    JTextField name;
+    public static JButton delete;
+    public static JTextField name;
     JLabel error;
     ActionListener action;
     KeyListener key;
 
     String errorLength = "Username is too long";
     String errorNoName = "You must enter a Name";
+    public static String tCreate = "Create new User";
+    public static String tEdit = "Edit User";
+    public static boolean edit = false;
 
     public NewUserGUI(){
         newFrame = new JFrame("Create new User");
@@ -39,6 +43,10 @@ public class NewUserGUI{
             }else{
                 if(e.getSource() == cancel){
                     cancel();
+                }else{
+                    if(e.getSource() == delete){
+                        delete();
+                    }
                 }
             }
             //save User
@@ -53,7 +61,7 @@ public class NewUserGUI{
 
             @Override
             public void keyTyped(KeyEvent e) {
-                
+
             }
 
             @Override
@@ -81,12 +89,22 @@ public class NewUserGUI{
 
         //Button cancel
         cancel = new JButton();
-        cancel.setText("cancel");
+        cancel.setText("Cancel");
         cancel.setBounds(300,200,100,40);
         cancel.addActionListener(action);
         cancel.addKeyListener(key);
 
         cancel.setVisible(true);
+
+
+        //Button delete
+        delete = new JButton();
+        delete.setText("Delete User");
+        delete.setBounds(150,150,100,40);
+        delete.addActionListener(action);
+        delete.addKeyListener(key);
+
+        delete.setVisible(false);
 
 
         //TextField name
@@ -108,6 +126,7 @@ public class NewUserGUI{
 
         newFrame.add(cancel);
         newFrame.add(create);
+        newFrame.add(delete);
         newFrame.add(name);
         newFrame.add(error);
 
@@ -121,17 +140,28 @@ public class NewUserGUI{
             if(name.getText().length() >= 12){
                 error.setText(errorLength);
             }else{
-                newFrame.setVisible(false);
-                Main.users.add(new User(name.getText(), 0));
-                name.setText("");
-                error.setText("");
+                if(edit){
+                    Main.users.set(GameClock.getSelUser(), new User(name.getText(), Main.users.get(GameClock.getSelUser()).getHighscore()));
+                }else{
+                    Main.users.add(new User(name.getText(), 0));
+                }
+                cancel();
             }
         }
+    }
+
+    public void delete(){
+        Main.users.remove(GameClock.getSelUser());
+        GameClock.setSelUser(-1);
+        cancel();
     }
 
     public void cancel(){
         name.setText("");
         error.setText("");
         newFrame.setVisible(false);
+        delete.setVisible(false);
+        create.setText(tCreate);
+        edit = false;
     }
 }
