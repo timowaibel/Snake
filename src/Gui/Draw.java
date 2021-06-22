@@ -14,7 +14,6 @@ import java.net.URL;
 public class Draw extends JLabel {
 
     Point p;
-    BufferedImage snake;
     BufferedImage pickUp;
     BufferedImage pickUpG;
     BufferedImage headR;
@@ -29,7 +28,6 @@ public class Draw extends JLabel {
     Font heading = new Font("Arial", Font.BOLD, 50);
     Font text = new Font("Arial", Font.BOLD, 35);
     Color textC = new Color(51,204,51);
-    //Color textC1 = new Color(151,201,151);
     Color textC1 = new Color(221,51,51);
     URL apfel = getClass().getResource("apfel.png");
     URL gApfel = getClass().getResource("goldenerApfel.png");
@@ -82,17 +80,13 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //Draw Snake Tails
-        //g.setColor(new Color(30,200,30));
         for(int i = 0; i<Snake.tails.size(); i++){
             p = Snake.ptc(Snake.tails.get(i).getX(),Snake.tails.get(i).getY());
-            //g.fillRect(p.x,p.y,32,32);
             drawTail(p.x, p.y, g, i%2);
         }
 
         //Draw Snake Head
         p = Snake.ptc(Snake.head.getX(), Snake.head.getY());
-        /*g.setColor(new Color(0,153,0));
-        g.fillRect(p.x,p.y,32,32);*/
         drawHead(p.x, p.y, g);
 
         // Draw PickUp
@@ -174,21 +168,10 @@ public class Draw extends JLabel {
             }
         }
 
-        /*//draw Picture
-        URL resource = getClass().getResource("snakeNeu.png");
-        try {
-            snake = ImageIO.read(resource);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        g.drawImage(snake, 145, 90, this);*/
-
         //Draw Snake Tails
         Point p1 = new Point();
-        //g.setColor(new Color(30,200,30));
         for(int i = 0; i<Snake.tails.size(); i++){
             p1.setLocation(Snake.tails.get(i).getX(),Snake.tails.get(i).getY());
-            //g.fillRect(p1.x,p1.y,32,32);
             drawTail(p1.x, p1.y, g, i%2);
         }
 

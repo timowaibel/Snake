@@ -37,6 +37,11 @@ public class NewUserGUI{
         newFrame.setResizable(false);
         newFrame.setLayout(null);
 
+        java.net.URL imgURL = getClass().getResource("iconNewUser.png");
+        ImageIcon icon = new ImageIcon(imgURL);
+        Image image = icon.getImage();
+        newFrame.setIconImage(image);
+
         action = e -> {
             if(e.getSource() == create || e.getSource() == name){
                 create();

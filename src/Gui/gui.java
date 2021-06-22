@@ -24,10 +24,10 @@ public class gui {
         jf.addKeyListener(new KeyHandler( ));
         jf.addMouseListener(new MouseListener());
 
-       // java.net.URL imgURL = getClass().getResource("icon.png");
-       //ImageIcon icon = new ImageIcon(imgURL);
-       // Image image = icon.getImage();
-        // jf.setIconImage(image);
+        java.net.URL imgURL = getClass().getResource("icon.png");
+        ImageIcon icon = new ImageIcon(imgURL);
+        Image image = icon.getImage();
+        jf.setIconImage(image);
 
         d= new Draw();
         d.setBounds(0,0,width,height);
