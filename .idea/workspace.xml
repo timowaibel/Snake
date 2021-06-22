@@ -3,18 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="56151e7f-56f3-4785-a825-6699d75173e6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/gui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Collission.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Collission.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/clock/GameClock$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/clock/GameClock$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/clock/GameClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/clock/GameClock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Snake$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Snake$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Snake.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Highscore.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Draw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/Collission.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Collission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/action/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/MouseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clock/GameClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clock/GameClock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Highscore.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +33,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1n9vgII4NQX5tWHB9ESykqn8kFN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
@@ -92,9 +105,10 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -137,7 +151,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/User" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

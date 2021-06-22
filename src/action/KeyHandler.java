@@ -71,9 +71,6 @@ public class KeyHandler implements KeyListener {
                             Main.setRunning(true);
                             Main.setScreen(Screen.Game);
                             Snake.score=0;
-                            GameClock.easy=false;
-                            GameClock.medium=false;
-                            GameClock.hard=false;
                         }
                     }
                         break;

@@ -16,7 +16,7 @@ public class Snake {
 
     public static PickUp pickup = new PickUp();
     //Score
-    public static int score=0, highscore=0;
+    public static int score=0, highscore=0, userHighscore=0;
 
     public static int collectedPickUp = 0;
 
