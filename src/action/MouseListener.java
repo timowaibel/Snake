@@ -76,6 +76,7 @@ public class MouseListener extends MouseAdapter {
                                 NewUserGUI newUserGUI = new NewUserGUI();
                             }else{
                                 if(!NewUserGUI.newFrame.isVisible()){
+                                    NewUserGUI.cancel(false);
                                     NewUserGUI.newFrame.setVisible(true);
                                 }
                             }

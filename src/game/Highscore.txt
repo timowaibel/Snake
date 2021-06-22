@@ -1,6 +1,6 @@
 Sven
-80
-Joni
+100
+123
 50
 Jonas
 40

@@ -18,7 +18,7 @@ public class NewUserGUI{
     JButton cancel;
     public static JButton delete;
     public static JTextField name;
-    JLabel error;
+    public static JLabel error;
     ActionListener action;
     KeyListener key;
 
@@ -42,7 +42,7 @@ public class NewUserGUI{
                 create();
             }else{
                 if(e.getSource() == cancel){
-                    cancel();
+                    cancel(true);
                 }else{
                     if(e.getSource() == delete){
                         delete();
@@ -67,7 +67,7 @@ public class NewUserGUI{
             @Override
             public void keyPressed(KeyEvent e) {
                 if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-                    cancel();
+                    cancel(true);
                 }
             }
 
@@ -145,7 +145,7 @@ public class NewUserGUI{
                 }else{
                     Main.users.add(new User(name.getText(), 0));
                 }
-                cancel();
+                cancel(true);
             }
         }
     }
@@ -153,15 +153,17 @@ public class NewUserGUI{
     public void delete(){
         Main.users.remove(GameClock.getSelUser());
         GameClock.setSelUser(-1);
-        cancel();
+        cancel(true);
     }
 
-    public void cancel(){
+    public static void cancel(boolean vis){
         name.setText("");
         error.setText("");
-        newFrame.setVisible(false);
-        delete.setVisible(false);
         create.setText(tCreate);
         edit = false;
+        if(vis){
+            newFrame.setVisible(false);
+            delete.setVisible(false);
+        }
     }
 }

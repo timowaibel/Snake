@@ -43,7 +43,7 @@ public class Draw extends JLabel {
     URL DOpen = getClass().getResource("Dropdown open.png");
     URL Edit = getClass().getResource("edit.png");
 
-    public static int[] dropdown = {170, 35, 200, 100};
+    public static int[] dropdown = {170, 35, 300, 100};
 
     public Draw() {
         try {
@@ -214,7 +214,7 @@ public class Draw extends JLabel {
         g.setFont(text);
         g.drawString("Your Score "+Snake.score,264,400);
         g.drawString("Highscore "+Snake.highscore,278,300);
-        if(GameClock.getSelUser()>=1){
+        if(GameClock.getSelUser()>=0){
             g.drawString("Your Highscore "+ Main.users.get(GameClock.getSelUser()).getHighscore(), 230, 350);
         }
         g.drawString("Press Space to play again", 180, 500);

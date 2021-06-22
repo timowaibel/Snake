@@ -30,11 +30,14 @@ public class Collission {
                 Snake.score+=10;
             }
 
-            if(Snake.score > Main.users.get(GameClock.getSelUser()).getHighscore()){
-                Main.users.get(GameClock.getSelUser()).setHighscore(Snake.score);
-            }
-            if(Snake.score > Snake.highscore){
-                Snake.highscore = Snake.score;
+            if(GameClock.getSelUser()>=0){
+                if(Snake.score > Main.users.get(GameClock.getSelUser()).getHighscore()){
+                    Main.users.get(GameClock.getSelUser()).setHighscore(Snake.score);
+                }
+
+                if(Snake.score > Snake.highscore){
+                    Snake.highscore = Snake.score;
+                }
             }
 
             if(Snake.pickup.getX() == Snake.head.getX() && Snake.pickup.getY() == Snake.head.getY()){

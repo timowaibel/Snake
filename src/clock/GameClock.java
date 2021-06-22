@@ -46,9 +46,11 @@ public class GameClock extends Thread {
                         Snake.resetSnake(true);
 
                         //save User
-                        User i = Main.users.get(getSelUser());
-                        saveUser();
-                        setSelUser(Main.users.indexOf(i));
+                        if(getSelUser() >= 0){
+                            User i = Main.users.get(getSelUser());
+                            saveUser();
+                            setSelUser(Main.users.indexOf(i));
+                        }
                     }
                 } catch (InterruptedException | IOException e) {
                     e.printStackTrace();
@@ -181,7 +183,9 @@ public class GameClock extends Thread {
             }
             writer.close();
 
-            Snake.highscore = Main.users.get(0).getHighscore();
+            if(Main.users.size() != 0){
+                Snake.highscore = Main.users.get(0).getHighscore();
+            }
         }
     }
 
