@@ -1,5 +1,6 @@
 package action;
 
+import Gui.NewUserGUI;
 import Gui.Screen;
 import Gui.gui;
 import clock.GameClock;
@@ -28,6 +29,7 @@ public class Main {
         gameClock.setName("Gameclock");
         gameClock.start();
         g.create();
+        new NewUserGUI();
         startScreenSnake();
 
         File file = new File("src/game/Highscore.txt");

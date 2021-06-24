@@ -1,7 +1,6 @@
 package action;
 
 import Gui.Screen;
-import clock.GameClock;
 import game.Difficulties;
 import game.Direction;
 import game.Snake;
