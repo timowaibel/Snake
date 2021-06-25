@@ -21,35 +21,26 @@ public class MouseListener extends MouseAdapter {
         int x = e.getX() - 8;
         int y = e.getY() - 30;
 
-        switch (Main.screen) {
-            case Start:
-                break;
-            case Game:
-                break;
-            case Death:
-                break;
-        }
-
         if (Main.screen != Screen.Game) {
             dropdownMouseListener(x, y);
         }
     }
 
     public void dropdownMouseListener(int x, int y){
-        // öffnen des Dropdown Menu
+        // open Dropdown menu
         if (x > startX && x < startX + width && y > startY && y < startY + height) {
-            System.out.println("Hallo " + x + " " + y);
+            System.out.println("Fold/Open " + x + " " + y);
             GameClock.setFolded(!GameClock.isFolded());
         } else {
             if (!GameClock.isFolded()) {
-                //click auf User
+                //User clicked
                 if (x > startX && x < startX + width && y > startY + height && y < startY + ((Main.users.size() + 1) * height)) {
                     int index = (y - startY - height) / height;
-                    //Auswahl oder bearbeiten
+                    //select or edit?
                     if(x > startX + width - 35 && x < startX + width){
-                        //bearbeiten
+                        //edit
                         GameClock.setSelUser(index);
-                        //neues Fenster um neuen User zu bearbeiten
+                        //open Window for User edit
                         if(!NewUserGUI.newFrame.isVisible()){
                             NewUserGUI.newFrame.setVisible(true);
                         }
@@ -57,26 +48,26 @@ public class MouseListener extends MouseAdapter {
                         NewUserGUI.delete.setVisible(true);
                         NewUserGUI.name.setText(Main.users.get(GameClock.getSelUser()).getName());
                         NewUserGUI.edit = true;
-                        System.out.println("Grüß dich " + x + " " + y + " "+ index + " "+ Main.users.get(index).getName());
+                        System.out.println("Edit/Delete " + x + " " + y + " "+ index + " "+ Main.users.get(index).getName());
                     }else{
                         if(GameClock.getSelUser() == index){
                             GameClock.setSelUser(-1);
                         }else{
                             GameClock.setSelUser(index);
                         }
-                        System.out.println("Servus " + x + " " + y + " " + index + " " + Main.users.get(index).getName());
+                        System.out.println("Select " + x + " " + y + " " + index + " " + Main.users.get(index).getName());
                     }
                 } else {
-                    //click auf new User
+                    //new User clicked
                     if (x > startX && x < startX + width && y > startY + height && y > startY + ((Main.users.size() + 1) * height) && y < startY + ((Main.users.size() + 2) * height) && Main.users.size() <= Main.maxUser) {
-                        System.out.println("Moin " + x + " " + y);
-                        //neues Fenster um neuen User zu erstellen
+                        System.out.println("Create " + x + " " + y);
+                        //open Window to create new User
                         if(!NewUserGUI.newFrame.isVisible()){
                             NewUserGUI.cancel(false);
                             NewUserGUI.newFrame.setVisible(true);
                         }
                     } else {
-                        System.out.println("Tschüss " + x + " " + y);
+                        System.out.println("Bye " + x + " " + y);
                         if(NewUserGUI.newFrame.isVisible()){
                             NewUserGUI.newFrame.setVisible(false);
                         }else{
@@ -85,7 +76,7 @@ public class MouseListener extends MouseAdapter {
                     }
                 }
             } else {
-                System.out.println("Tschüss " + x + " " + y);
+                System.out.println("Bye " + x + " " + y);
             }
         }
     }

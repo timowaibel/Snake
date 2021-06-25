@@ -26,7 +26,6 @@ public class Main {
     public static void main(String[] args) throws IOException {
         gui g= new gui();
         gameClock = new GameClock();
-        gameClock.setName("Gameclock");
         gameClock.start();
         g.create();
         new NewUserGUI();
@@ -46,9 +45,10 @@ public class Main {
                 Snake.highscore = users.get(0).getHighscore();
             }
 
-            for (int i = 0; i < users.size(); i++) {
-                System.out.println(users.get(i).getName());
-                System.out.println(users.get(i).getHighscore());
+            //print out all user in Console
+            for (User user : users) {
+                System.out.println(user.getName());
+                System.out.println(user.getHighscore());
             }
             scanner.close();
         }

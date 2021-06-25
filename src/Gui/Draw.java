@@ -102,13 +102,13 @@ public class Draw extends JLabel {
         g.setColor(Color.lightGray);
         for(int x=0; x<16;x++){
             for(int y=0; y<16;y++){
-                g.drawRect(x*32+gui.xoff,y*32+gui.yoff,32,32);
+                g.drawRect(x*32+gui.xOff,y*32+gui.yOff,32,32);
             }
         }
 
         //Draw Border
         g.setColor(Color.lightGray);
-        g.drawRect(gui.xoff,gui.yoff,512,512);
+        g.drawRect(gui.xOff,gui.yOff,512,512);
 
         // Draw Score
         g.setColor(textC);

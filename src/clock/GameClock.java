@@ -2,8 +2,7 @@ package clock;
 
 import Gui.Screen;
 import Gui.gui;
-import action.Collission;
-import action.KeyHandler;
+import action.Collision;
 import action.Main;
 import game.*;
 
@@ -36,13 +35,13 @@ public class GameClock extends Thread {
                     Snake.move();
                     Snake.waitToMove = false;
 
-                    Collission.collidePickUp();
+                    Collision.collidePickUp();
 
-                    if(Collission.collideSelf()||Collission.collideWall()){
+                    if(Collision.collideSelf()|| Collision.collideWall()){
                         Main.setRunning(false);
                         Main.setScreen(Screen.Death);
 
-                        //Snake zurücksetzen
+                        //reset Snake
                         Snake.resetSnake(true);
 
                         //save User
@@ -126,33 +125,12 @@ public class GameClock extends Thread {
     }
 
     public boolean SnakeDisappeared(){
-        switch (Snake.head.getDirection()){
-            case RIGHT:
-                if(Snake.tails.get(Snake.tails.size()-1).getX() == gui.width){
-                    return true;
-                }else {
-                    return false;
-                }
-            case UP:
-                if(Snake.tails.get(Snake.tails.size()-1).getY() == -32){
-                    return true;
-                }else {
-                    return false;
-                }
-            case LEFT:
-                if(Snake.tails.get(Snake.tails.size()-1).getX() == -32){
-                    return true;
-                }else {
-                    return false;
-                }
-            case DOWN:
-                if(Snake.tails.get(Snake.tails.size()-1).getY() == gui.height){
-                    return true;
-                }else {
-                    return false;
-                }
-        }
-        return false;
+        return switch (Snake.head.getDirection()) {
+            case RIGHT -> Snake.tails.get(Snake.tails.size() - 1).getX() == gui.width;
+            case UP -> Snake.tails.get(Snake.tails.size() - 1).getY() == -32;
+            case LEFT -> Snake.tails.get(Snake.tails.size() - 1).getX() == -32;
+            case DOWN -> Snake.tails.get(Snake.tails.size() - 1).getY() == gui.height;
+        };
     }
 
     public static void saveUser() throws IOException {
@@ -160,7 +138,7 @@ public class GameClock extends Thread {
         if(file.exists()){
             BufferedWriter writer = new BufferedWriter(new FileWriter(file));
 
-            //Array sortieren
+            //sort Array
             boolean sorted = false;
             while (!sorted){
                 sorted = true;
@@ -174,7 +152,7 @@ public class GameClock extends Thread {
                 }
             }
 
-            //user in File übertragen
+            //write user in File
             for(int i = 0; i < Main.users.size(); i++) {
                 writer.write(Main.users.get(i).getName());
                 writer.newLine();

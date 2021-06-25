@@ -16,7 +16,7 @@ public class Snake {
 
     public static PickUp pickup = new PickUp();
     //Score
-    public static int score=0, highscore=0, userHighscore=0;
+    public static int score=0, highscore=0;
 
     public static int collectedPickUp = 0;
 
@@ -103,8 +103,8 @@ public class Snake {
     //Position to Coordinate
     public static Point ptc(int x,int y){
         Point p = new Point(0,0);
-        p.x= x * 32 + gui.xoff;
-        p.y= y * 32 + gui.yoff;
+        p.x= x * 32 + gui.xOff;
+        p.y= y * 32 + gui.yOff;
         return p;
     }
 

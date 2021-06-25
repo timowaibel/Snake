@@ -3,7 +3,7 @@ package action;
 import clock.GameClock;
 import game.Snake;
 
-public class Collission {
+public class Collision {
 
     public static boolean collideWall(){
         return ( Snake.head.getX()<0 || Snake.head.getX()>15 || Snake.head.getY()<0 || Snake.head.getY()>15);
