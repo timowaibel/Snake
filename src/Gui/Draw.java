@@ -42,6 +42,7 @@ public class Draw extends JLabel {
     URL Edit = getClass().getResource("edit.png");
 
     public static int[] dropdown = {170, 35, 300, 100};
+    public static int[] difficulties = {150, 320, 550, 250};
 
     public Draw() {
         try {
@@ -140,33 +141,7 @@ public class Draw extends JLabel {
         g.drawString("created by Sven & Timo", 10, 550);
 
         //Difficulties
-        switch(Main.getDifficulties()){
-            case EASY -> {
-                g.setFont(text);
-                g.setColor(textC);
-                g.drawString("MEDIUM",320,250);
-                g.drawString("HARD",550,250);
-                g.setColor(textC1);
-                g.drawString("EASY",150,250);
-            }
-            case MEDIUM -> {
-                g.setFont(text);
-                g.setColor(textC1);
-                g.drawString("MEDIUM",320,250);
-                g.setColor(textC);
-                g.drawString("HARD",550,250);
-                g.drawString("EASY",150,250);
-            }
-            case HARD -> {
-                g.setFont(text);
-                g.setColor(textC);
-                g.drawString("MEDIUM",320,250);
-                g.setColor(textC1);
-                g.drawString("HARD",550,250);
-                g.setColor(textC);
-                g.drawString("EASY",150,250);
-            }
-        }
+        drawDifficulties(g);
 
         //Draw Snake Tails
         Point p1 = new Point();
@@ -203,34 +178,9 @@ public class Draw extends JLabel {
         g.drawString("Press Space to play again", 180, 500);
 
         //Difficulties
-        switch(Main.getDifficulties()) {
-            case EASY -> {
-                g.setFont(text);
-                g.setColor(textC);
-                g.drawString("MEDIUM", 320, 250);
-                g.drawString("HARD", 550, 250);
-                g.setColor(textC1);
-                g.drawString("EASY", 150, 250);
-            }
-            case MEDIUM -> {
-                g.setFont(text);
-                g.setColor(textC1);
-                g.drawString("MEDIUM", 320, 250);
-                g.setColor(textC);
-                g.drawString("HARD", 550, 250);
-                g.drawString("EASY", 150, 250);
-            }
-            case HARD -> {
-                g.setFont(text);
-                g.setColor(textC);
-                g.drawString("MEDIUM", 320, 250);
-                g.setColor(textC1);
-                g.drawString("HARD", 550, 250);
-                g.setColor(textC);
-                g.drawString("EASY", 150, 250);
-            }
-        }
+        drawDifficulties(g);
 
+        //Dropdown
         drawDropdown(g);
     }
 
@@ -297,6 +247,27 @@ public class Draw extends JLabel {
             g.drawImage(dFolded, startX + width - 35, startY, this);
         }else{
             g.drawImage(dOpen, startX + width - 35, startY, this);
+        }
+    }
+
+    public void drawDifficulties(Graphics g){
+        int xEasy = difficulties[0];
+        int xMedium = difficulties[1];
+        int xHard = difficulties[2];
+        int y = difficulties[3];
+
+
+        g.setFont(text);
+        g.setColor(textC);
+        g.drawString("EASY", xEasy, y);
+        g.drawString("MEDIUM", xMedium, y);
+        g.drawString("HARD", xHard, y);
+
+        g.setColor(textC1);
+        switch(Main.getDifficulties()) {
+            case EASY -> g.drawString("EASY", xEasy, y);
+            case MEDIUM -> g.drawString("MEDIUM", xMedium, y);
+            case HARD -> g.drawString("HARD", xHard, y);
         }
     }
 }

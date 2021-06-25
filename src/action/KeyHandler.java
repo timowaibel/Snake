@@ -1,6 +1,7 @@
 package action;
 
 import Gui.Screen;
+import clock.GameClock;
 import game.Difficulties;
 import game.Direction;
 import game.Snake;
@@ -48,6 +49,11 @@ public class KeyHandler implements KeyListener {
                     break;
             }
         }else {
+            if(Main.getScreen() == Screen.Death && e.getKeyCode() == KeyEvent.VK_ESCAPE){
+                Main.setScreen(Screen.Start);
+                GameClock.startScreenSnake();
+            }
+
             switch (e.getKeyCode()){
                 case KeyEvent.VK_1:
                     Main.setDifficulties(Difficulties.EASY);
@@ -72,12 +78,10 @@ public class KeyHandler implements KeyListener {
                             Snake.score=0;
                         }
                     }
-                        break;
-
-
+                    break;
             }
         }
-        }
+    }
 
 
     @Override

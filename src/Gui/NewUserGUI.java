@@ -49,7 +49,7 @@ public class NewUserGUI{
                 create();
             }else{
                 if(e.getSource() == cancel){
-                    cancel(true);
+                    cancel();
                 }else{
                     if(e.getSource() == delete){
                         delete();
@@ -74,7 +74,7 @@ public class NewUserGUI{
             @Override
             public void keyPressed(KeyEvent e) {
                 if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
-                    cancel(true);
+                    cancel();
                 }
             }
 
@@ -152,7 +152,7 @@ public class NewUserGUI{
                 }else{
                     Main.users.add(new User(name.getText(), 0));
                 }
-                cancel(true);
+                cancel();
             }
         }
     }
@@ -160,17 +160,15 @@ public class NewUserGUI{
     public void delete(){
         Main.users.remove(GameClock.getSelUser());
         GameClock.setSelUser(-1);
-        cancel(true);
+        cancel();
     }
 
-    public static void cancel(boolean vis){
+    public static void cancel(){
         name.setText("");
         error.setText("");
         create.setText(tCreate);
         edit = false;
-        if(vis){
-            newFrame.setVisible(false);
-            delete.setVisible(false);
-        }
+        newFrame.setVisible(false);
+        delete.setVisible(false);
     }
 }
