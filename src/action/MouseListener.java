@@ -4,6 +4,7 @@ import Gui.Draw;
 import Gui.NewUserGUI;
 import Gui.Screen;
 import clock.GameClock;
+import game.Difficulties;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -21,17 +22,9 @@ public class MouseListener extends MouseAdapter {
         int x = e.getX() - 8;
         int y = e.getY() - 30;
 
-        switch (Main.screen) {
-            case Start:
-                break;
-            case Game:
-                break;
-            case Death:
-                break;
-        }
-
         if (Main.screen != Screen.Game) {
             dropdownMouseListener(x, y);
+            difficultiesMouseListener(x, y);
         }
     }
 
@@ -86,6 +79,25 @@ public class MouseListener extends MouseAdapter {
                 }
             } else {
                 System.out.println("Tschüss " + x + " " + y);
+            }
+        }
+    }
+
+    public void difficultiesMouseListener(int x, int y){
+        if(y > Draw.difficulties[3] - 30 && y < Draw.difficulties[3]){
+            if(x > Draw.difficulties[0] && x < Draw.difficulties[0] + 95){
+                System.out.println("Easy");
+                Main.setDifficulties(Difficulties.EASY);
+            }else{
+                if(x > Draw.difficulties[1] && x < Draw.difficulties[1] + 140){
+                    System.out.println("Medium");
+                    Main.setDifficulties(Difficulties.MEDIUM);
+                }else{
+                    if(x > Draw.difficulties[2] && x < Draw.difficulties[2] + 100){
+                        System.out.println("Hard");
+                        Main.setDifficulties(Difficulties.HARD);
+                    }
+                }
             }
         }
     }
