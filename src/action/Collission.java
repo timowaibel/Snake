@@ -1,6 +1,7 @@
 package action;
 
 import clock.GameClock;
+import game.Difficulties;
 import game.Snake;
 
 public class Collission {
@@ -26,8 +27,12 @@ public class Collission {
             //Score
             if(Snake.isGolden()){
                 Snake.score+=50;
-            }else{
-                Snake.score+=10;
+            }
+
+            switch (Main.getDifficulties()){
+                case EASY -> Snake.score+=10;
+                case MEDIUM -> Snake.score+=15;
+                case HARD -> Snake.score+=20;
             }
 
             if(GameClock.getSelUser()>=0){
