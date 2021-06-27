@@ -109,6 +109,6 @@ public class Snake {
     }
 
     public static boolean isGolden() {
-        return Snake.collectedPickUp % 20 == 0 && Snake.collectedPickUp != 0;
+        return Snake.collectedPickUp % 19 == 0 && Snake.collectedPickUp != 0;
     }
 }

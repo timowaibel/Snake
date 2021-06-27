@@ -65,17 +65,21 @@ public class KeyHandler implements KeyListener {
                     Main.setDifficulties(Difficulties.HARD);
                     break;
                 case KeyEvent.VK_SPACE:
-                        if(Main.getScreen() == Screen.Start){
+                    if(Main.getScreen() == Screen.Start){
                         Snake.resetSnake(true);
                         Main.setRunning(true);
                         Main.setScreen(Screen.Game);
                         //Score
                         Snake.score=0;
+                        //GameClock.sounds.stopSound();
+                        //GameClock.sounds.loopSound(Sounds.theme);
                     }else{
                         if(Main.getScreen() == Screen.Death){
+                            GameClock.sounds.stopSound();
                             Main.setRunning(true);
                             Main.setScreen(Screen.Game);
                             Snake.score=0;
+                            //GameClock.sounds.loopSound(Sounds.theme);
                         }
                     }
                     break;
