@@ -12,7 +12,7 @@ public class Sounds {
 
     private final float value;
 
-    Clip clip;
+    public static Clip clip;
     FloatControl control;
 
     public Sounds() {
@@ -49,25 +49,12 @@ public class Sounds {
 
             control.setValue(value);
 
-            clip.loop(100000000);
+            clip.loop(Clip.LOOP_CONTINUOUSLY);
 
             clip.start();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    public void stopSound(){
-        //if(clip != null){
-        System.out.println("Stop");
-            clip.stop();
-            clip.setFramePosition(0);
-            clip.close();
-
-    }
-
-    public boolean isActive(){
-        return clip.isActive();
     }
 }

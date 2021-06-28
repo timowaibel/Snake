@@ -78,6 +78,4 @@ public class Main {
     public static void setDifficulties(Difficulties difficulties) {
         Main.difficulties = difficulties;
     }
-
-
 }

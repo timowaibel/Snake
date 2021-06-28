@@ -18,11 +18,10 @@ public class GameClock extends Thread {
 
     public static Sounds sounds;
 
-    public GameClock() {
-        sounds = new Sounds();
-    }
 
     public void run(){
+        sounds = new Sounds();
+        sounds.loopSound(Sounds.theme);
         while(true){
             if(Main.isRunning()){
                 try {
@@ -45,7 +44,6 @@ public class GameClock extends Thread {
                     Collision.collidePickUp();
 
                     if(Collision.collideSelf() || Collision.collideWall()){
-                        sounds.stopSound();
                         sounds.playSound(Sounds.death);
                         Main.setRunning(false);
                         Main.setScreen(Screen.Death);
