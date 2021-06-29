@@ -27,7 +27,11 @@ public class Collision {
             if(Snake.isGolden()){
                 Snake.score+=50;
             }else{
-                Snake.score+=10;
+                switch (Main.getDifficulties()){
+                    case EASY -> Snake.score+=10;
+                    case MEDIUM -> Snake.score+=15;
+                    case HARD -> Snake.score+=20;
+                }
             }
 
             if(GameClock.getSelUser()>=0){
