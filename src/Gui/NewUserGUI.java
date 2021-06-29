@@ -24,6 +24,7 @@ public class NewUserGUI{
 
     String errorLength = "Username is too long";
     String errorNoName = "You must enter a Name";
+    String errorName = "Your name is not available";
     public static String tCreate = "Create new User";
     public static String tEdit = "Edit User";
     public static boolean edit = false;
@@ -147,12 +148,16 @@ public class NewUserGUI{
             if(name.getText().length() >= 12){
                 error.setText(errorLength);
             }else{
-                if(edit){
-                    Main.users.set(GameClock.getSelUser(), new User(name.getText(), Main.users.get(GameClock.getSelUser()).getHighscore()));
+                if(nameUnique()){
+                    error.setText(errorName);
                 }else{
-                    Main.users.add(new User(name.getText(), 0));
+                    if(edit){
+                        Main.users.set(GameClock.getSelUser(), new User(name.getText(), Main.users.get(GameClock.getSelUser()).getHighscore()));
+                    }else{
+                        Main.users.add(new User(name.getText(), 0));
+                    }
+                    cancel();
                 }
-                cancel();
             }
         }
     }
@@ -170,5 +175,14 @@ public class NewUserGUI{
         edit = false;
         newFrame.setVisible(false);
         delete.setVisible(false);
+    }
+
+    public boolean nameUnique(){
+        for(int i = 0; i < Main.users.size(); i++){
+            if(name.getText().equals(Main.users.get(i).getName())){
+                return true;
+            }
+        }
+        return false;
     }
 }
