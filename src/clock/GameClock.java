@@ -2,8 +2,7 @@ package clock;
 
 import Gui.Screen;
 import Gui.gui;
-import action.Collission;
-import action.KeyHandler;
+import action.Collision;
 import action.Main;
 import game.*;
 
@@ -36,9 +35,9 @@ public class GameClock extends Thread {
                     Snake.move();
                     Snake.waitToMove = false;
 
-                    Collission.collidePickUp();
+                    Collision.collidePickUp();
 
-                    if(Collission.collideSelf()||Collission.collideWall()){
+                    if(Collision.collideSelf()|| Collision.collideWall()){
                         Main.setRunning(false);
                         Main.setScreen(Screen.Death);
 
