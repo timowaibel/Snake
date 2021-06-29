@@ -4,6 +4,7 @@ import Gui.Screen;
 import Gui.gui;
 import action.Collision;
 import action.Main;
+import action.Sounds;
 import game.*;
 
 import java.io.BufferedWriter;
@@ -15,7 +16,12 @@ public class GameClock extends Thread {
     public static boolean folded = true;
     public static int selUser = -1;
 
+    public static Sounds sounds;
+
+
     public void run(){
+        sounds = new Sounds();
+        sounds.loopSound(Sounds.theme);
         while(true){
             if(Main.isRunning()){
                 try {
@@ -37,7 +43,8 @@ public class GameClock extends Thread {
 
                     Collision.collidePickUp();
 
-                    if(Collision.collideSelf()|| Collision.collideWall()){
+                    if(Collision.collideSelf() || Collision.collideWall()){
+                        sounds.playSound(Sounds.death);
                         Main.setRunning(false);
                         Main.setScreen(Screen.Death);
 

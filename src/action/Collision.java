@@ -48,6 +48,18 @@ public class Collision {
                     Snake.pickup.reset();
                 }
             }
+
+
+            //Sound
+            if(Snake.score == 420 || Snake.score == 690){
+                GameClock.sounds.playSound(Sounds.nice);
+            }else {
+                if(Snake.isGolden()){
+                    GameClock.sounds.playSound(Sounds.collectG);
+                }else{
+                    GameClock.sounds.playSound(Sounds.collect);
+                }
+            }
             Snake.collectedPickUp++;
         }
     }

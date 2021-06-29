@@ -46,7 +46,7 @@ public class MouseListener extends MouseAdapter {
                         if(!NewUserGUI.newFrame.isVisible()){
                             NewUserGUI.newFrame.setVisible(true);
                         }
-                        //neues Fenster um neuen User zu bearbeiten
+                        //open Window to Edit/Delete User
                         NewUserGUI.cancel();
                         NewUserGUI.newFrame.setVisible(true);
                         NewUserGUI.create.setText(NewUserGUI.tEdit);
@@ -67,22 +67,18 @@ public class MouseListener extends MouseAdapter {
                     if (x > startX && x < startX + width && y > startY + height && y > startY + ((Main.users.size() + 1) * height) && y < startY + ((Main.users.size() + 2) * height) && Main.users.size() <= Main.maxUser) {
                         System.out.println("Create " + x + " " + y);
                         //open Window to create new User
-                        if (!NewUserGUI.newFrame.isVisible()) {
+                        if (!NewUserGUI.newFrame.isVisible() || NewUserGUI.edit) {
                             NewUserGUI.cancel();
-                            System.out.println("Moin " + x + " " + y);
-                            //neues Fenster um neuen User zu erstellen
-                            if (!NewUserGUI.newFrame.isVisible() || NewUserGUI.edit) {
-                                NewUserGUI.cancel();
-                                NewUserGUI.newFrame.setVisible(true);
-                            }
-                        } else {
-                            System.out.println("Bye " + x + " " + y);
-                            if (NewUserGUI.newFrame.isVisible()) {
-                                NewUserGUI.newFrame.setVisible(false);
-                            } else {
-                                GameClock.setFolded(true);
-                            }
+                            NewUserGUI.newFrame.setVisible(true);
                         }
+                    } else {
+                        System.out.println("Bye " + x + " " + y);
+                        if (NewUserGUI.newFrame.isVisible()) {
+                            NewUserGUI.newFrame.setVisible(false);
+                        } else {
+                            GameClock.setFolded(true);
+                        }
+
                     }
                 }
             } else {

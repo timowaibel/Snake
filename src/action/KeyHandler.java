@@ -65,14 +65,15 @@ public class KeyHandler implements KeyListener {
                     Main.setDifficulties(Difficulties.HARD);
                     break;
                 case KeyEvent.VK_SPACE:
-                        if(Main.getScreen() == Screen.Start){
+                    GameClock.setFolded(true);
+                    if(Main.getScreen() == Screen.Start){
                         Snake.resetSnake(true);
                         Main.setRunning(true);
                         Main.setScreen(Screen.Game);
                         //Score
                         Snake.score=0;
                     }else{
-                        if(Main.getScreen() == Screen.Death){
+                        if(Main.getScreen() == Screen.Death){;
                             Main.setRunning(true);
                             Main.setScreen(Screen.Game);
                             Snake.score=0;
