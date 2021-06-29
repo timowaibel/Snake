@@ -54,39 +54,27 @@ public class KeyHandler implements KeyListener {
                 GameClock.startScreenSnake();
             }
 
-            switch (e.getKeyCode()){
-                case KeyEvent.VK_1:
-                    Main.setDifficulties(Difficulties.EASY);
-                    break;
-                case KeyEvent.VK_2:
-                    Main.setDifficulties(Difficulties.MEDIUM);
-                    break;
-                case KeyEvent.VK_3:
-                    Main.setDifficulties(Difficulties.HARD);
-                    break;
-                case KeyEvent.VK_SPACE:
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_1 -> Main.setDifficulties(Difficulties.EASY);
+                case KeyEvent.VK_2 -> Main.setDifficulties(Difficulties.MEDIUM);
+                case KeyEvent.VK_3 -> Main.setDifficulties(Difficulties.HARD);
+                case KeyEvent.VK_SPACE -> {
                     GameClock.setFolded(true);
-                    if(Main.getScreen() == Screen.Start){
+                    if (Main.getScreen() == Screen.Start) {
                         Snake.resetSnake(true);
                         Main.setRunning(true);
                         Main.setScreen(Screen.Game);
                         //Score
-                        Snake.score=0;
-                    }else{
-                        if(Main.getScreen() == Screen.Death){;
+                        Snake.score = 0;
+                    } else {
+                        if (Main.getScreen() == Screen.Death) {
+                            ;
                             Main.setRunning(true);
                             Main.setScreen(Screen.Game);
-                            Snake.score=0;
+                            Snake.score = 0;
                         }
                     }
-                    break;
-                case KeyEvent.VK_E:
-                    try {
-                        String URL="https://www.bing.com/videos/search?q=never+gonna+give+you+up&view=detail&mid=4E7B1C0F8E67E9F7B1364E7B1C0F8E67E9F7B136&FORM=VIRE0&ru=%2fsearch%3fq%3dnever%2bgonna%2bgive%2byou%2bup%26cvid%3d57e023a749ad4d87ab87cb745ea69dbb%26aqs%3dedge.1.69i57j0l3.6830j0j1%26pglt%3d2083%26FORM%3dANNTA1%26PC%3dU531";
-                        java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL));
-                    }
-                    catch (Exception ignored){
-                    }
+                }
             }
         }
     }

@@ -137,8 +137,8 @@ public class Draw extends JLabel {
             g.drawString("Your Highscore "+Main.users.get(GameClock.getSelUser()).getHighscore(),259,390);
         }
         g.drawString("Press Space to start", 230,500);
-        g.setFont(new Font("Arial", Font.BOLD, 10));
-        g.drawString("created by Sven & Timo", 10, 550);
+
+        drawCreated(g);
 
         //Difficulties
         drawDifficulties(g);
@@ -176,6 +176,8 @@ public class Draw extends JLabel {
             g.drawString("Your Highscore "+ Main.users.get(GameClock.getSelUser()).getHighscore(), 230, 350);
         }
         g.drawString("Press Space to play again", 180, 500);
+
+        drawCreated(g);
 
         //Difficulties
         drawDifficulties(g);
@@ -269,5 +271,11 @@ public class Draw extends JLabel {
             case MEDIUM -> g.drawString("MEDIUM", xMedium, y);
             case HARD -> g.drawString("HARD", xHard, y);
         }
+    }
+
+    public void drawCreated(Graphics g){
+        g.setColor(textC);
+        g.setFont(new Font("Arial", Font.BOLD, 10));
+        g.drawString("created by Sven & Timo", 10, 550);
     }
 }

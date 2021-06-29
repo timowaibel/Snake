@@ -25,6 +25,7 @@ public class MouseListener extends MouseAdapter {
         if (Main.screen != Screen.Game) {
             dropdownMouseListener(x, y);
             difficultiesMouseListener(x, y);
+            easterEggMouseListener(x, y);
         }
     }
 
@@ -101,6 +102,36 @@ public class MouseListener extends MouseAdapter {
                         System.out.println("Hard");
                         Main.setDifficulties(Difficulties.HARD);
                     }
+                }
+            }
+        }
+    }
+
+    public void easterEggMouseListener(int x, int y) {
+        if(x < 130 && y > 530){
+            try {
+                String URL="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+                java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL));
+            }
+            catch (Exception ignored){ }
+            System.out.println("Never gonna give you up");
+        }else{
+            if(x > 240 && x < 550 && y > 10 && y < 50 && Main.screen == Screen.Death){
+                try {
+                    String URL="https://www.youtube.com/watch?v=d1YBv2mWll0";
+                    java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL));
+                }
+                catch (Exception ignored){ }
+                System.out.println("You got Jebaited");
+            }else{
+                if(x > 320 && x < 470 && y > 10 && y < 50 && Main.screen == Screen.Start){
+                    System.out.println("You got Jebaited");
+                    try {
+                        String URL="https://www.youtube.com/watch?v=d1YBv2mWll0";
+                        java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL));
+                    }
+                    catch (Exception ignored){ }
+                    System.out.println("You got Jebaited");
                 }
             }
         }
