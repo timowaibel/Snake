@@ -8,8 +8,8 @@ import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
 public class Draw extends JLabel {
 
@@ -29,17 +29,18 @@ public class Draw extends JLabel {
     Font text = new Font("Arial", Font.BOLD, 35);
     Color textC = new Color(51,204,51);
     Color textC1 = new Color(221,51,51);
-    URL apfel = getClass().getResource("apfel.png");
-    URL gApfel = getClass().getResource("goldenerApfel.png");
-    URL HeadR = getClass().getResource("HeadR.png");
-    URL HeadU = getClass().getResource("HeadU.png");
-    URL HeadL = getClass().getResource("HeadL.png");
-    URL HeadD = getClass().getResource("HeadD.png");
-    URL Tail1 = getClass().getResource("Tail1.png");
-    URL Tail2 = getClass().getResource("Tail2.png");
-    URL DFolded = getClass().getResource("Dropdown folded.png");
-    URL DOpen = getClass().getResource("Dropdown open.png");
-    URL Edit = getClass().getResource("edit.png");
+    File apfel = new File("src/res/images/apfel.png");
+    //URL apfel = getClass().getResource("src/res/images/apfel.png");
+    File gApfel = new File("src/res/images/goldenerApfel.png");
+    File HeadR = new File("src/res/images/HeadR.png");
+    File HeadU = new File("src/res/images/HeadU.png");
+    File HeadL = new File("src/res/images/HeadL.png");
+    File HeadD = new File("src/res/images/HeadD.png");
+    File Tail1 = new File("src/res/images/Tail1.png");
+    File Tail2 = new File("src/res/images/Tail2.png");
+    File DFolded = new File("src/res/images/Dropdown folded.png");
+    File DOpen = new File("src/res/images/Dropdown open.png");
+    File Edit = new File("src/res/images/edit.png");
 
     public static int[] dropdown = {170, 35, 300, 100};
     public static int[] difficulties = {150, 320, 550, 250};

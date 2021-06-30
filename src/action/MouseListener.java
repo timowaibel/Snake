@@ -125,7 +125,6 @@ public class MouseListener extends MouseAdapter {
                 System.out.println("You got Jebaited");
             }else{
                 if(x > 320 && x < 470 && y > 10 && y < 50 && Main.screen == Screen.Start){
-                    System.out.println("You got Jebaited");
                     try {
                         String URL="https://www.youtube.com/watch?v=d1YBv2mWll0";
                         java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL));

@@ -16,11 +16,11 @@ public class Sounds {
     FloatControl control;
 
     public Sounds() {
-        collect = new File("src/res/collect.wav");
-        theme = new File("src/res/theme.wav");
-        death = new File("src/res/death.wav");
-        nice = new File("src/res/nice.wav");
-        collectG = new File("src/res/collectG.wav");
+        collect = new File("src/res/sounds/collect.wav");
+        collectG = new File("src/res/sounds/collectG.wav");
+        death = new File("src/res/sounds/death.wav");
+        nice = new File("src/res/sounds/nice.wav");
+        theme = new File("src/res/sounds/theme.wav");
 
         value = -30f;
     }

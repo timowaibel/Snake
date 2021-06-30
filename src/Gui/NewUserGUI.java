@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.io.IOException;
 
 public class NewUserGUI{
@@ -38,12 +39,10 @@ public class NewUserGUI{
         newFrame.setResizable(false);
         newFrame.setLayout(null);
 
-        java.net.URL imgURL = getClass().getResource("iconNewUser.png");
-        if (imgURL != null) {
-            ImageIcon icon = new ImageIcon(imgURL);
-            Image image = icon.getImage();
-            newFrame.setIconImage(image);
-        }
+        File imgURL = new File("src/res/images/iconNewUser.png");
+        ImageIcon icon = new ImageIcon(String.valueOf(imgURL));
+        Image image = icon.getImage();
+        newFrame.setIconImage(image);
 
         action = e -> {
             if(e.getSource() == create || e.getSource() == name){
@@ -98,7 +97,7 @@ public class NewUserGUI{
         //Button cancel
         cancel = new JButton();
         cancel.setText("Cancel");
-        cancel.setBounds(300,200,100,40);
+        cancel.setBounds(200,200,150,40);
         cancel.addActionListener(action);
         cancel.addKeyListener(key);
 
@@ -108,7 +107,7 @@ public class NewUserGUI{
         //Button delete
         delete = new JButton();
         delete.setText("Delete User");
-        delete.setBounds(150,150,100,40);
+        delete.setBounds(100,150,200,40);
         delete.addActionListener(action);
         delete.addKeyListener(key);
 
