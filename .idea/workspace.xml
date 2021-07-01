@@ -5,17 +5,15 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/gui.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/KeyHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Sounds.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Sounds.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/clock/GameClock$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/clock/GameClock$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/clock/GameClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/clock/GameClock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Highscore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Draw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/gui.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/action/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/MouseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/clock/GameClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clock/GameClock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Highscore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/images/icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,15 +39,15 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/action/Collision.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/action/KeyHandler.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/game/Snake.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/Gui/gui.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/Gui/Draw.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/action/Collision.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/game/Highscore.txt" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/action/Main.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/action/MouseListener.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/clock/GameClock.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/action/MouseListener.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/action/KeyHandler.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Gui/gui.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/action/Main.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/game/Snake.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="1n9vgII4NQX5tWHB9ESykqn8kFN" />
   <component name="ProjectLevelVcsManager">
