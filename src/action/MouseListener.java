@@ -94,7 +94,7 @@ public class MouseListener extends MouseAdapter {
                 System.out.println("Easy");
                 Main.setDifficulties(Difficulties.EASY);
             }else{
-                if(x > Draw.difficulties[1] && x < Draw.difficulties[1] + 140){
+                if(x > Draw.difficulties[1] && x < Draw.difficulties[1] + 140 && GameClock.isFolded()){
                     System.out.println("Medium");
                     Main.setDifficulties(Difficulties.MEDIUM);
                 }else{

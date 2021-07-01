@@ -7,6 +7,7 @@ import action.Main;
 import action.Sounds;
 import game.*;
 
+import java.awt.*;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
@@ -15,6 +16,7 @@ import java.io.IOException;
 public class GameClock extends Thread {
     public static boolean folded = true;
     public static int selUser = -1;
+    public static int hover = 0;
 
     public static Sounds sounds;
 
@@ -71,6 +73,19 @@ public class GameClock extends Thread {
                                 Snake.resetSnake(false);
                                 startScreenSnake();
                             }
+                            Point point = MouseInfo.getPointerInfo().getLocation();
+                            Point pointF = gui.getFrameLocation();
+                            int x = (int) (point.getX() - pointF.getX() - 8);
+                            int y = (int) (point.getY() - pointF.getY() - 30);
+                            if(x > 0 && x < 130 && y > 530 && y < gui.height){
+                                hover = 1;
+                            }else{
+                                if(x > 320 && x < 470 && y > 10 && y < 50){
+                                    hover = 2;
+                                }else{
+                                    hover = 0;
+                                }
+                            }
                         }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -80,6 +95,19 @@ public class GameClock extends Thread {
                         sleep(1);
                     } catch (InterruptedException e) {
                         e.printStackTrace();
+                    }
+                    Point point = MouseInfo.getPointerInfo().getLocation();
+                    Point pointF = gui.getFrameLocation();
+                    int x = (int) (point.getX() - pointF.getX() - 8);
+                    int y = (int) (point.getY() - pointF.getY() - 30);
+                    if(x > 0 && x < 130 && y > 530 && y < gui.height){
+                        hover = 1;
+                    }else{
+                        if(x > 240 && x < 550 && y > 10 && y < 50){
+                            hover = 2;
+                        }else{
+                            hover = 0;
+                        }
                     }
                 }
             }

@@ -8,7 +8,7 @@ import java.awt.*;
 import java.io.File;
 
 public class gui {
-    JFrame jf;
+    public static JFrame jf;
     Draw d;
 
     public static int width=810,height=600;
@@ -36,5 +36,9 @@ public class gui {
 
         jf.requestFocus();
         jf.setVisible(true);
+    }
+
+    public static Point getFrameLocation(){
+        return jf.getLocationOnScreen();
     }
 }

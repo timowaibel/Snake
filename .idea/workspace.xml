@@ -5,53 +5,17 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Screen.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/gui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Collision$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Collision$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Collision.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Collision.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/KeyHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Sounds.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Sounds.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/clock/GameClock$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/clock/GameClock$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/clock/GameClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/clock/GameClock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Difficulties.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Difficulties.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Direction.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Direction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Head.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Head.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Highscore.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/PickUp.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/PickUp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Snake$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Snake$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Snake.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Snake.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/Tail.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/Tail.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/game/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/game/User.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Draw.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Dropdown folded.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Dropdown open.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HeadD.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HeadL.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HeadR.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/HeadU.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/NewUserGUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Tail1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/Tail2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/apfel.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/edit.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/goldenerApfel.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Gui/gui.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/gui.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/iconNewUser.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/snake.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Gui/snakeNeu.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/KeyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/KeyHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/action/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/MouseListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/Sounds.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/Sounds.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/collect.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/collectG.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/death.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/nice.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/theme.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clock/GameClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clock/GameClock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/game/Highscore.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Highscore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/res/images/icon.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

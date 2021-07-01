@@ -129,9 +129,14 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //draw Text
-        g.setColor(textC);
+        if(GameClock.hover == 2){
+            g.setColor(Color.red);
+        }else{
+            g.setColor(textC);
+        }
         g.setFont(heading);
         g.drawString("Snake",320,50);
+        g.setColor(textC);
         g.setFont(text);
         g.drawString("Global Highscore "+Snake.highscore,249,350);
         if(GameClock.getSelUser()>=0){
@@ -167,9 +172,14 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //draw Text
-        g.setColor(textC);
+        if(GameClock.hover == 2){
+            g.setColor(Color.red);
+        }else{
+            g.setColor(textC);
+        }
         g.setFont(heading);
         g.drawString("GAME OVER",240,50);
+        g.setColor(textC);
         g.setFont(text);
         g.drawString("Your Score "+Snake.score,264,400);
         g.drawString("Highscore "+Snake.highscore,278,300);
@@ -275,7 +285,11 @@ public class Draw extends JLabel {
     }
 
     public void drawCreated(Graphics g){
-        g.setColor(textC);
+        if(GameClock.hover == 1){
+            g.setColor(Color.red);
+        }else{
+            g.setColor(textC);
+        }
         g.setFont(new Font("Arial", Font.BOLD, 10));
         g.drawString("created by Sven & Timo", 10, 550);
     }
