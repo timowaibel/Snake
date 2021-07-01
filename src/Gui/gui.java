@@ -5,9 +5,10 @@ import action.MouseListener;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 
 public class gui {
-    JFrame jf;
+    public static JFrame jf;
     Draw d;
 
     public static int width=810,height=600;
@@ -23,12 +24,10 @@ public class gui {
         jf.addKeyListener(new KeyHandler( ));
         jf.addMouseListener(new MouseListener());
 
-        java.net.URL imgURL = getClass().getResource("icon.png");
-        if (imgURL != null) {
-            ImageIcon icon = new ImageIcon(imgURL);
-            Image image = icon.getImage();
-            jf.setIconImage(image);
-        }
+        File imgURL = new File("src/res/images/icon.png");
+        ImageIcon icon = new ImageIcon(String.valueOf(imgURL));
+        Image image = icon.getImage();
+        jf.setIconImage(image);
 
         d= new Draw();
         d.setBounds(0,0,width,height);
@@ -37,5 +36,9 @@ public class gui {
 
         jf.requestFocus();
         jf.setVisible(true);
+    }
+
+    public static Point getFrameLocation(){
+        return jf.getLocationOnScreen();
     }
 }

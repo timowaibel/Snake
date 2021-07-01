@@ -23,21 +23,27 @@ public class MouseListener extends MouseAdapter {
         int y = e.getY() - 30;
 
         if (Main.screen != Screen.Game) {
-            dropdownMouseListener(x, y);
-            difficultiesMouseListener(x, y);
-            easterEggMouseListener(x, y);
+            if(!dropdownMouseListener(x, y)){
+                if(!difficultiesMouseListener(x, y)){
+                    if(!easterEggMouseListener(x, y)){
+                        System.out.println("Bye " + x + " " + y);
+                    }
+                }
+            }
         }
     }
 
-    public void dropdownMouseListener(int x, int y){
+    public boolean dropdownMouseListener(int x, int y){
         // open Dropdown menu
         if (x > startX && x < startX + width && y > startY && y < startY + height) {
             System.out.println("Fold/Open " + x + " " + y);
             GameClock.setFolded(!GameClock.isFolded());
+            return true;
         } else {
             if (!GameClock.isFolded()) {
                 //User clicked
                 if (x > startX && x < startX + width && y > startY + height && y < startY + ((Main.users.size() + 1) * height)) {
+                    //get index of User
                     int index = (y - startY - height) / height;
                     //select or edit?
                     if(x > startX + width - 35 && x < startX + width){
@@ -56,6 +62,7 @@ public class MouseListener extends MouseAdapter {
                         NewUserGUI.edit = true;
                         System.out.println("Edit/Delete " + x + " " + y + " "+ index + " "+ Main.users.get(index).getName());
                     }else{
+                        //select User
                         if(GameClock.getSelUser() == index){
                             GameClock.setSelUser(-1);
                         }else{
@@ -63,6 +70,7 @@ public class MouseListener extends MouseAdapter {
                         }
                         System.out.println("Select " + x + " " + y + " " + index + " " + Main.users.get(index).getName());
                     }
+                    return true;
                 } else {
                     //new User clicked
                     if (x > startX && x < startX + width && y > startY + height && y > startY + ((Main.users.size() + 1) * height) && y < startY + ((Main.users.size() + 2) * height) && Main.users.size() <= Main.maxUser) {
@@ -72,42 +80,47 @@ public class MouseListener extends MouseAdapter {
                             NewUserGUI.cancel();
                             NewUserGUI.newFrame.setVisible(true);
                         }
+                        return true;
                     } else {
-                        System.out.println("Bye " + x + " " + y);
+                        //close NewUserGui or Dropdown
                         if (NewUserGUI.newFrame.isVisible()) {
                             NewUserGUI.newFrame.setVisible(false);
                         } else {
                             GameClock.setFolded(true);
                         }
-
+                        return false;
                     }
                 }
             } else {
-                System.out.println("Bye " + x + " " + y);
+                return false;
             }
         }
     }
 
-    public void difficultiesMouseListener(int x, int y){
+    public boolean difficultiesMouseListener(int x, int y){
         if(y > Draw.difficulties[3] - 30 && y < Draw.difficulties[3]){
             if(x > Draw.difficulties[0] && x < Draw.difficulties[0] + 95){
                 System.out.println("Easy");
                 Main.setDifficulties(Difficulties.EASY);
+                return true;
             }else{
-                if(x > Draw.difficulties[1] && x < Draw.difficulties[1] + 140){
+                if(x > Draw.difficulties[1] && x < Draw.difficulties[1] + 140 && GameClock.isFolded()){
                     System.out.println("Medium");
                     Main.setDifficulties(Difficulties.MEDIUM);
+                    return true;
                 }else{
                     if(x > Draw.difficulties[2] && x < Draw.difficulties[2] + 100){
                         System.out.println("Hard");
                         Main.setDifficulties(Difficulties.HARD);
+                        return true;
                     }
                 }
             }
         }
+        return false;
     }
 
-    public void easterEggMouseListener(int x, int y) {
+    public boolean easterEggMouseListener(int x, int y) {
         if(x < 130 && y > 530){
             try {
                 String URL="https://www.youtube.com/watch?v=dQw4w9WgXcQ";
@@ -115,6 +128,7 @@ public class MouseListener extends MouseAdapter {
             }
             catch (Exception ignored){ }
             System.out.println("Never gonna give you up");
+            return true;
         }else{
             if(x > 240 && x < 550 && y > 10 && y < 50 && Main.screen == Screen.Death){
                 try {
@@ -123,17 +137,19 @@ public class MouseListener extends MouseAdapter {
                 }
                 catch (Exception ignored){ }
                 System.out.println("You got Jebaited");
+                return true;
             }else{
                 if(x > 320 && x < 470 && y > 10 && y < 50 && Main.screen == Screen.Start){
-                    System.out.println("You got Jebaited");
                     try {
                         String URL="https://www.youtube.com/watch?v=d1YBv2mWll0";
                         java.awt.Desktop.getDesktop().browse(java.net.URI.create(URL));
                     }
                     catch (Exception ignored){ }
                     System.out.println("You got Jebaited");
+                    return true;
                 }
             }
         }
+        return false;
     }
 }
