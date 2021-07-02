@@ -1,5 +1,7 @@
 package clock;
 
+import Gui.Draw;
+import Gui.Hover;
 import Gui.Screen;
 import Gui.gui;
 import action.Collision;
@@ -16,7 +18,7 @@ import java.io.IOException;
 public class GameClock extends Thread {
     public static boolean folded = true;
     public static int selUser = -1;
-    public static int hover = 0;
+    public static Hover hover = Hover.Empty;
 
     public static Sounds sounds;
 
@@ -73,19 +75,7 @@ public class GameClock extends Thread {
                                 Snake.resetSnake(false);
                                 startScreenSnake();
                             }
-                            Point point = MouseInfo.getPointerInfo().getLocation();
-                            Point pointF = gui.getFrameLocation();
-                            int x = (int) (point.getX() - pointF.getX() - 8);
-                            int y = (int) (point.getY() - pointF.getY() - 30);
-                            if(x > 0 && x < 130 && y > 530 && y < gui.height){
-                                hover = 1;
-                            }else{
-                                if(x > 320 && x < 470 && y > 10 && y < 50){
-                                    hover = 2;
-                                }else{
-                                    hover = 0;
-                                }
-                            }
+                            hoverListener();
                         }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
@@ -96,20 +86,9 @@ public class GameClock extends Thread {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    Point point = MouseInfo.getPointerInfo().getLocation();
-                    Point pointF = gui.getFrameLocation();
-                    int x = (int) (point.getX() - pointF.getX() - 8);
-                    int y = (int) (point.getY() - pointF.getY() - 30);
-                    if(x > 0 && x < 130 && y > 530 && y < gui.height){
-                        hover = 1;
-                    }else{
-                        if(x > 240 && x < 550 && y > 10 && y < 50){
-                            hover = 2;
-                        }else{
-                            hover = 0;
-                        }
-                    }
+                    hoverListener();
                 }
+
             }
         }
     }
@@ -202,6 +181,41 @@ public class GameClock extends Thread {
         }
     }
 
+    public void hoverListener(){
+        Point point = MouseInfo.getPointerInfo().getLocation();
+        Point pointF = gui.getFrameLocation();
+        int x = (int) (point.getX() - pointF.getX() - 8);
+        int y = (int) (point.getY() - pointF.getY() - 30);
+        if(x > 240 && x < 550 && y > 10 && y < 50 && Main.getScreen() == Screen.Death){
+            hover = Hover.Jebaited;
+
+        }else{
+            if(x > 320 && x < 470 && y > 10 && y < 50 && Main.getScreen() == Screen.Start){
+                hover = Hover.Jebaited;
+            }else{
+                if(x > 0 && x < 130 && y > 530 && y < gui.height){
+                    hover = Hover.Rickroll;
+                }else{
+                    if(y > Draw.difficulties[3] - 30 && y < Draw.difficulties[3]){
+                        if(x > Draw.difficulties[0] && x < Draw.difficulties[0] + 95){
+                            hover = Hover.Easy;
+                        }else{
+                            if(x > Draw.difficulties[1] && x < Draw.difficulties[1] + 140 && GameClock.isFolded()){
+                                hover = Hover.Medium;
+                            }else{
+                                if(x > Draw.difficulties[2] && x < Draw.difficulties[2] + 100){
+                                    hover = Hover.Hard;
+                                }
+                            }
+                        }
+                    }else{
+                        hover = Hover.Empty;
+                    }
+                }
+            }
+        }
+    }
+
     public static boolean isFolded() {
         return folded;
     }
@@ -216,5 +230,13 @@ public class GameClock extends Thread {
 
     public static void setSelUser(int selUser) {
         GameClock.selUser = selUser;
+    }
+
+    public static Hover getHover() {
+        return hover;
+    }
+
+    public static void setHover(Hover hover) {
+        GameClock.hover = hover;
     }
 }

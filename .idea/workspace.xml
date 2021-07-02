@@ -2,18 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56151e7f-56f3-4785-a825-6699d75173e6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Gui/Hover.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/Draw.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/NewUserGUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/Gui/gui.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/Gui/gui.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/KeyHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/KeyHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/MouseListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Snake/action/Sounds.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/action/Sounds.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/clock/GameClock$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/clock/GameClock$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Snake/clock/GameClock.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Snake/clock/GameClock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/action/MouseListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/action/MouseListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Gui/Draw.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Gui/Draw.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/clock/GameClock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/clock/GameClock.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +21,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>

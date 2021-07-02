@@ -129,7 +129,7 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //draw Text
-        if(GameClock.hover == 2){
+        if(GameClock.hover == Hover.Jebaited){
             g.setColor(Color.red);
         }else{
             g.setColor(textC);
@@ -172,7 +172,7 @@ public class Draw extends JLabel {
         g.fillRect(0,0,gui.width,gui.height);
 
         //draw Text
-        if(GameClock.hover == 2){
+        if(GameClock.hover == Hover.Jebaited){
             g.setColor(Color.red);
         }else{
             g.setColor(textC);
@@ -282,10 +282,16 @@ public class Draw extends JLabel {
             case MEDIUM -> g.drawString("MEDIUM", xMedium, y);
             case HARD -> g.drawString("HARD", xHard, y);
         }
+        g.setColor(Color.RED);
+        switch(GameClock.getHover()){
+            case Easy -> g.drawString("EASY", xEasy, y);
+            case Medium -> g.drawString("MEDIUM", xMedium, y);
+            case Hard -> g.drawString("HARD", xHard, y);
+        }
     }
 
     public void drawCreated(Graphics g){
-        if(GameClock.hover == 1){
+        if(GameClock.hover == Hover.Rickroll){
             g.setColor(Color.red);
         }else{
             g.setColor(textC);
